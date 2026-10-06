@@ -1,0 +1,103 @@
+[
+  {
+    "id": "brand-apex-audio",
+    "name": "Apex Audio",
+    "tagline": "Studio-grade acoustics for the modern content creator",
+    "category": "Tech & Audio",
+    "logo": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=150&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&auto=format&fit=crop&q=80",
+    "website": "https://apexaudio.example.com",
+    "location": "San Francisco, CA",
+    "verified": true,
+    "rating": 4.9,
+    "totalReviews": 38,
+    "collaborationsCount": 64,
+    "avgPayout": "$2,850",
+    "payoutSpeed": "Within 48h of approval",
+    "bio": "Apex Audio designs cutting-edge dynamic microphones, closed-back monitoring headphones, and desktop audio interfaces engineered specifically for streamers, podcasters, and YouTube creators.",
+    "guidelines": "We value authentic, audio-focused demonstrations. Highlight sound isolation, plug-and-play USB-C connectivity, and low self-noise. No scripted word-for-word reads; share your real workflow.",
+    "preferredPlatforms": ["YouTube", "Twitch", "TikTok", "Instagram"],
+    "contactEmail": "partnerships@apexaudio.example.com",
+    "foundedYear": 2019,
+    "socialHandles": {
+      "youtube": "@apexaudio",
+      "instagram": "@apexaudio.official",
+      "twitter": "@apexaudioHQ"
+    }
+  },
+  {
+    "id": "brand-lumina-skin",
+    "name": "Lumina Skincare",
+    "tagline": "Clean, microbiome-safe botanicals with clinical backing",
+    "category": "Beauty & Wellness",
+    "logo": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=150&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&auto=format&fit=crop&q=80",
+    "website": "https://luminaskin.example.com",
+    "location": "New York, NY",
+    "verified": true,
+    "rating": 4.8,
+    "totalReviews": 52,
+    "collaborationsCount": 110,
+    "avgPayout": "$1,750",
+    "payoutSpeed": "Same-day on delivery",
+    "bio": "Lumina makes non-toxic, cruelty-free barrier repair serums and hydration mists designed to withstand long screen exposure and artificial lighting fatigue.",
+    "guidelines": "Natural lighting is essential. Show texture application on bare skin. Mention barrier repair peptides and SPF 50 mineral protection.",
+    "preferredPlatforms": ["Instagram", "TikTok", "YouTube Shorts"],
+    "contactEmail": "collabs@luminaskin.example.com",
+    "foundedYear": 2021,
+    "socialHandles": {
+      "instagram": "@luminaskincare",
+      "tiktok": "@luminaskin"
+    }
+  },
+  {
+    "id": "brand-nexus-gear",
+    "name": "Nexus Ergonomics",
+    "tagline": "Architected workspace ergonomics for relentless focus",
+    "category": "Desk Setup & Productivity",
+    "logo": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=150&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=1200&auto=format&fit=crop&q=80",
+    "website": "https://nexusgear.example.com",
+    "location": "Austin, TX",
+    "verified": true,
+    "rating": 4.95,
+    "totalReviews": 46,
+    "collaborationsCount": 85,
+    "avgPayout": "$3,200",
+    "payoutSpeed": "Within 24h",
+    "bio": "Creators of motorized dual-motor solid oak standing desks, magnetic cable organizers, and monitor arms built to elevate workspace aesthetics.",
+    "guidelines": "Clean desk b-roll, motorized height transitions, cable management showcase. Cinematic 4K B-roll preferred.",
+    "preferredPlatforms": ["YouTube", "Instagram", "Pinterest"],
+    "contactEmail": "creators@nexusgear.example.com",
+    "foundedYear": 2020,
+    "socialHandles": {
+      "youtube": "@nexusworkspaces",
+      "instagram": "@nexusgear"
+    }
+  },
+  {
+    "id": "brand-pulse-energy",
+    "name": "Pulse Botanicals",
+    "tagline": "Nootropic brain hydration with zero sugar and zero crash",
+    "category": "Health & Fitness",
+    "logo": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=150&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1200&auto=format&fit=crop&q=80",
+    "website": "https://pulsebotanicals.example.com",
+    "location": "Boulder, CO",
+    "verified": true,
+    "rating": 4.7,
+    "totalReviews": 29,
+    "collaborationsCount": 42,
+    "avgPayout": "$1,400",
+    "payoutSpeed": "Within 72h",
+    "bio": "Crafted with lion's mane mushroom, L-theanine, and pink Himalayan electrolytes to fuel deep creative sessions without caffeine jitters.",
+    "guidelines": "Drink in morning creative routine or mid-day editing block. Showcase dissolution in ice cold water.",
+    "preferredPlatforms": ["TikTok", "Instagram", "YouTube"],
+    "contactEmail": "community@pulsebotanicals.example.com",
+    "foundedYear": 2022,
+    "socialHandles": {
+      "instagram": "@pulseenergy",
+      "tiktok": "@pulsefuel"
+    }
+  }
+]

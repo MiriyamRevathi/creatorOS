@@ -1,0 +1,101 @@
+[
+  {
+    "id": "app-001",
+    "campaignId": "camp-apex-pro-mic",
+    "campaignTitle": "Apex Vox-7 Studio Microphone Launch Campaign",
+    "brandId": "brand-apex-audio",
+    "brandName": "Apex Audio",
+    "creatorId": "creator-alex-rivera",
+    "creatorName": "Alex Rivera (Studio Craft)",
+    "creatorAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    "creatorNiche": "Audio Tech & Podcasting",
+    "creatorFollowers": 82000,
+    "creatorPlatform": "YouTube",
+    "creatorChannelUrl": "https://youtube.com/@studiocraft",
+    "proposedRate": 3500,
+    "pitchMessage": "Hey Apex Audio team! I have been reviewing microphone hardware for 5 years on YouTube with an audience of podcasters and voice actors. I'd love to produce an in-depth, side-by-side frequency response and noise-cancellation test comparing the Vox-7 against industry standards.",
+    "portfolioLinks": [
+      "https://youtube.com/watch?v=demo-audio-review-1",
+      "https://youtube.com/watch?v=demo-mic-shootout-2"
+    ],
+    "estimatedTurnaroundDays": 12,
+    "status": "Accepted",
+    "submittedAt": "2026-10-02T11:20:00Z",
+    "reviewedAt": "2026-10-03T15:45:00Z",
+    "brandNotes": "Excellent channel engagement and authentic production quality. Approved for dedicated segment."
+  },
+  {
+    "id": "app-002",
+    "campaignId": "camp-lumina-glow",
+    "campaignTitle": "Barrier Glow 3-Step Morning Routine Campaign",
+    "brandId": "brand-lumina-skin",
+    "brandName": "Lumina Skincare",
+    "creatorId": "creator-elena-chen",
+    "creatorName": "Elena Chen",
+    "creatorAvatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+    "creatorNiche": "Skincare & Morning Aesthetic",
+    "creatorFollowers": 45000,
+    "creatorPlatform": "Instagram",
+    "creatorChannelUrl": "https://instagram.com/elenaskinroutine",
+    "proposedRate": 1800,
+    "pitchMessage": "Hi Lumina! My audience loves barrier-first skincare routines. I plan to film a 4K 'get ready with me' reel focusing on the lightweight peptide barrier essence under everyday makeup with natural morning light.",
+    "portfolioLinks": [
+      "https://instagram.com/reel/sample-skincare-glow",
+      "https://tiktok.com/@elenachen/video/barrier-tips"
+    ],
+    "estimatedTurnaroundDays": 8,
+    "status": "Shortlisted",
+    "submittedAt": "2026-10-04T09:10:00Z",
+    "reviewedAt": "2026-10-05T10:00:00Z",
+    "brandNotes": "Great aesthetic match. Reviewing reel cadence before final contract issuance."
+  },
+  {
+    "id": "app-003",
+    "campaignId": "camp-nexus-desk",
+    "campaignTitle": "Ultimate Creator Workspace 2026 Tour & Redesign",
+    "brandId": "brand-nexus-gear",
+    "brandName": "Nexus Ergonomics",
+    "creatorId": "creator-marcus-vance",
+    "creatorName": "Marcus Vance",
+    "creatorAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    "creatorNiche": "Desk Setup & Software Engineering",
+    "creatorFollowers": 120000,
+    "creatorPlatform": "YouTube",
+    "creatorChannelUrl": "https://youtube.com/@marcusvancecode",
+    "proposedRate": 4200,
+    "pitchMessage": "I am currently filming my 2026 Studio Overhaul episode. The Nexus solid walnut desk would be the center piece of the entire 18-minute video. I will showcase the dual motor lift, cable raceways, and custom headphone mount integration.",
+    "portfolioLinks": [
+      "https://youtube.com/watch?v=workspace-tour-2025",
+      "https://instagram.com/p/desk-minimal-shot"
+    ],
+    "estimatedTurnaroundDays": 18,
+    "status": "Accepted",
+    "submittedAt": "2026-09-30T14:15:00Z",
+    "reviewedAt": "2026-10-01T16:00:00Z",
+    "brandNotes": "Top tier workspace creator. High production value. Approved immediately."
+  },
+  {
+    "id": "app-004",
+    "campaignId": "camp-pulse-flow",
+    "campaignTitle": "Deep Work Flow State Challenge",
+    "brandId": "brand-pulse-energy",
+    "brandName": "Pulse Botanicals",
+    "creatorId": "creator-sarah-jenkins",
+    "creatorName": "Sarah Jenkins",
+    "creatorAvatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+    "creatorNiche": "Design & Daily Vlog",
+    "creatorFollowers": 28000,
+    "creatorPlatform": "TikTok",
+    "creatorChannelUrl": "https://tiktok.com/@sarahcreates",
+    "proposedRate": 1200,
+    "pitchMessage": "As a motion designer pulling 8-hour rendering sprints, I have replaced coffee with adaptogens. I want to create a fun, fast-paced editing vlog featuring Pulse in my morning brew ritual.",
+    "portfolioLinks": [
+      "https://tiktok.com/@sarahcreates/video/motion-designer-day"
+    ],
+    "estimatedTurnaroundDays": 5,
+    "status": "Pending",
+    "submittedAt": "2026-10-05T08:30:00Z",
+    "reviewedAt": null,
+    "brandNotes": null
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ctr-001",
+    "applicationId": "app-001",
+    "campaignId": "camp-apex-pro-mic",
+    "campaignTitle": "Apex Vox-7 Studio Microphone Launch Campaign",
+    "brandId": "brand-apex-audio",
+    "brandName": "Apex Audio",
+    "creatorId": "creator-alex-rivera",
+    "creatorName": "Alex Rivera (Studio Craft)",
+    "creatorEmail": "alex@studiocraft.example.com",
+    "contractAmount": 3500,
+    "currency": "USD",
+    "paymentTerms": "50% upfront escrow funded, 50% upon final content sign-off",
+    "escrowStatus": "Funded in Escrow",
+    "creatorSigned": true,
+    "creatorSignedAt": "2026-10-03T16:10:00Z",
+    "brandSigned": true,
+    "brandSignedAt": "2026-10-03T16:00:00Z",
+    "status": "Active",
+    "effectiveDate": "2026-10-03",
+    "completionDeadline": "2026-10-25",
+    "terms": {
+      "ipRights": "Creator retains original copyright; Brand receives worldwide digital perpetual advertising and organic reposting license.",
+      "exclusivity": "Creator agrees not to promote competing dynamic broadcast microphones for 30 calendar days post-publication.",
+      "revisionsPolicy": "Includes up to two (2) rounds of minor brand editorial feedback before final public publishing.",
+      "cancellationFee": "25% kill fee applies if brand terminates after draft submission without cause."
+    }
+  },
+  {
+    "id": "ctr-002",
+    "applicationId": "app-003",
+    "campaignId": "camp-nexus-desk",
+    "campaignTitle": "Ultimate Creator Workspace 2026 Tour & Redesign",
+    "brandId": "brand-nexus-gear",
+    "brandName": "Nexus Ergonomics",
+    "creatorId": "creator-marcus-vance",
+    "creatorName": "Marcus Vance",
+    "creatorEmail": "marcus@vancecode.example.com",
+    "contractAmount": 4200,
+    "currency": "USD",
+    "paymentTerms": "100% in Escrow; released automatically 24h after deliverable approval",
+    "escrowStatus": "Funded in Escrow",
+    "creatorSigned": true,
+    "creatorSignedAt": "2026-10-01T17:30:00Z",
+    "brandSigned": true,
+    "brandSignedAt": "2026-10-01T16:45:00Z",
+    "status": "In Progress",
+    "effectiveDate": "2026-10-01",
+    "completionDeadline": "2026-10-22",
+    "terms": {
+      "ipRights": "Brand granted 12-month paid social whitelisting and website gallery embed usage.",
+      "exclusivity": "No competing motorized standing desk partnerships for 45 days.",
+      "revisionsPolicy": "One draft cut review to verify product accuracy before going live.",
+      "cancellationFee": "50% kill fee once desk shipping manifest is generated."
+    }
+  }
+]

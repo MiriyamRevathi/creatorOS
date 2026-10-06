@@ -1,0 +1,179 @@
+[
+  {
+    "id": "camp-apex-pro-mic",
+    "brandId": "brand-apex-audio",
+    "brandName": "Apex Audio",
+    "title": "Apex Vox-7 Studio Microphone Launch Campaign",
+    "tagline": "Showcase ultra-crisp vocal clarity in your creative streaming & podcast workflow",
+    "category": "Tech & Audio",
+    "compensationType": "Paid + Free Product",
+    "budget": 3500,
+    "currency": "USD",
+    "deadline": "2026-11-15",
+    "status": "Active",
+    "platforms": ["YouTube", "Twitch"],
+    "deliverables": [
+      {
+        "id": "deliv-vox7-1",
+        "title": "Dedicated YouTube Review or Integrated 90s Segment",
+        "format": "YouTube Video (1080p+)",
+        "quantity": 1,
+        "requiredSpecs": "Show unboxing, physical dial adjustments, and audio comparison with baseline audio."
+      },
+      {
+        "id": "deliv-vox7-2",
+        "title": "Twitch Stream Overlay & Verbal Shoutout",
+        "format": "Live Stream",
+        "quantity": 2,
+        "requiredSpecs": "Display Apex Vox logo in streamer sponsor bar and mention custom EQ presets."
+      }
+    ],
+    "requirements": {
+      "minFollowers": 25000,
+      "niches": ["Tech Reviews", "Gaming & Streaming", "Podcasting", "Audio Engineering"],
+      "creatorLocation": ["United States", "Canada", "United Kingdom", "Germany", "Global"],
+      "exclusivityDays": 30
+    },
+    "description": "Apex Audio is releasing the Vox-7 dynamic broadcast microphone with dual analog XLR and lossless USB-C DSP processing. We are partnering with reputable creators to demonstrate real-world noise rejection and sound presence.",
+    "perks": [
+      "Complimentary Vox-7 Broadcast Kit with boom arm & shock mount ($399 value)",
+      "15% affiliate kickback on all trackable custom link conversions",
+      "Priority VIP access to upcoming DAC & monitoring hardware drops"
+    ],
+    "applicantCount": 14,
+    "selectedCount": 3,
+    "featured": true,
+    "createdAt": "2026-10-01T10:00:00Z"
+  },
+  {
+    "id": "camp-lumina-glow",
+    "brandId": "brand-lumina-skin",
+    "brandName": "Lumina Skincare",
+    "title": "Barrier Glow 3-Step Morning Routine Campaign",
+    "tagline": "Aesthetic morning routine showcasing skin barrier recovery & SPF shield",
+    "category": "Beauty & Wellness",
+    "compensationType": "Paid Fixed Fee",
+    "budget": 1800,
+    "currency": "USD",
+    "deadline": "2026-10-30",
+    "status": "Active",
+    "platforms": ["Instagram", "TikTok"],
+    "deliverables": [
+      {
+        "id": "deliv-lum-1",
+        "title": "High-aesthetic 45-60s Reel / TikTok",
+        "format": "Vertical Video (9:16)",
+        "quantity": 2,
+        "requiredSpecs": "Clear skin macro shots, natural morning lighting, ASMR dropper sound effects."
+      },
+      {
+        "id": "deliv-lum-2",
+        "title": "Instagram Story Sequence with Link Sticker",
+        "format": "Story (3 frames)",
+        "quantity": 1,
+        "requiredSpecs": "Frame 1: Routine setup, Frame 2: Product texture, Frame 3: 20% creator promo link."
+      }
+    ],
+    "requirements": {
+      "minFollowers": 15000,
+      "niches": ["Skincare", "Beauty", "Morning Routines", "Wellness"],
+      "creatorLocation": ["United States", "United Kingdom", "Australia"],
+      "exclusivityDays": 14
+    },
+    "description": "Lumina Skincare is highlighting our Triple Peptide Barrier Essence and Dew Barrier Sunscreen. We seek creators who champion authentic skin textures, clean ingredients, and mindful morning rituals.",
+    "perks": [
+      "Full Lumina Barrier Repair Routine box ($180 value)",
+      "Opportunity for long-term monthly ambassador retainer contract",
+      "Paid whitelisting ad spend behind top performing creator reels"
+    ],
+    "applicantCount": 27,
+    "selectedCount": 5,
+    "featured": true,
+    "createdAt": "2026-10-03T14:30:00Z"
+  },
+  {
+    "id": "camp-nexus-desk",
+    "brandId": "brand-nexus-gear",
+    "brandName": "Nexus Ergonomics",
+    "title": "Ultimate Creator Workspace 2026 Tour & Redesign",
+    "tagline": "Transform your creative studio desk with motorized solid walnut craftsmanship",
+    "category": "Desk Setup & Productivity",
+    "compensationType": "Paid + Free Product",
+    "budget": 4200,
+    "currency": "USD",
+    "deadline": "2026-11-20",
+    "status": "Active",
+    "platforms": ["YouTube", "Instagram"],
+    "deliverables": [
+      {
+        "id": "deliv-nex-1",
+        "title": "Full Desk Setup / Studio Tour Feature",
+        "format": "YouTube Video (10+ mins)",
+        "quantity": 1,
+        "requiredSpecs": "Show desk assembly timelapse, motor noise test, cable management tray, and sit-to-stand transitions."
+      },
+      {
+        "id": "deliv-nex-2",
+        "title": "Desk Aesthetic Carousel Post",
+        "format": "Instagram Carousel (5+ slides)",
+        "quantity": 1,
+        "requiredSpecs": "Day vs Night lighting shots, close-up grain details, clean minimal setup."
+      }
+    ],
+    "requirements": {
+      "minFollowers": 50000,
+      "niches": ["Desk Setups", "Productivity", "Tech & Coding", "Creative Spaces"],
+      "creatorLocation": ["United States", "Canada", "Europe"],
+      "exclusivityDays": 45
+    },
+    "description": "Nexus Ergonomics crafts heirloom-grade motorized standing desks and modular aluminum accessories. We are selecting high-caliber workspace and productivity creators to review our flagship Apex Oak Pro series.",
+    "perks": [
+      "Flagship Nexus Solid Oak Motorized Desk + Dual Monitor Arm ($1,850 value)",
+      "Custom branded discount code with 10% lifetime commission",
+      "Featured spotlight in Nexus Creator Showcase gallery"
+    ],
+    "applicantCount": 19,
+    "selectedCount": 2,
+    "featured": true,
+    "createdAt": "2026-09-28T09:15:00Z"
+  },
+  {
+    "id": "camp-pulse-flow",
+    "brandId": "brand-pulse-energy",
+    "brandName": "Pulse Botanicals",
+    "title": "Deep Work Flow State Challenge",
+    "tagline": "How creators sustain 6-hour deep focus blocks without crashing",
+    "category": "Health & Fitness",
+    "compensationType": "Paid Fixed Fee",
+    "budget": 1200,
+    "currency": "USD",
+    "deadline": "2026-10-25",
+    "status": "Active",
+    "platforms": ["TikTok", "YouTube Shorts"],
+    "deliverables": [
+      {
+        "id": "deliv-pls-1",
+        "title": "Day in the Life Focus Session Video",
+        "format": "Short-Form Video (30-60s)",
+        "quantity": 2,
+        "requiredSpecs": "Demonstrate mixing Pulse Botanicals packet in ice shaker during morning prep."
+      }
+    ],
+    "requirements": {
+      "minFollowers": 10000,
+      "niches": ["Productivity", "Fitness", "Design & Video Editing", "Lifestyle"],
+      "creatorLocation": ["Global"],
+      "exclusivityDays": 7
+    },
+    "description": "Pulse Botanicals is replacing synthetic energy drinks with botanical nootropics. We want creators to share their raw, realistic editing and creative workdays.",
+    "perks": [
+      "3-Month supply of Pulse Nootropic Elixir sticks ($150 value)",
+      "Branded stainless steel shaker thermos",
+      "Fast payout upon video approval"
+    ],
+    "applicantCount": 31,
+    "selectedCount": 6,
+    "featured": false,
+    "createdAt": "2026-10-04T12:00:00Z"
+  }
+]
