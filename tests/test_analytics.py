@@ -66,3 +66,5 @@ def test_flask_api_routes():
     trends_res = client.get("/api/trends/explorer")
     assert trends_res.status_code == 200
     assert trends_res.json["success"] is True
+
+# Pytest Suite Version 1.0.0
