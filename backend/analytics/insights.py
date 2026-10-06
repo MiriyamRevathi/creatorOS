@@ -56,3 +56,5 @@ class CreatorInsightGenerator:
             })
 
         return insights
+
+# Analytics Calculation Engine Version 1.0.0
