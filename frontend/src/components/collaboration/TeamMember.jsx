@@ -1,0 +1,1 @@
+export default function TeamMember() { return <div>Team Member Component</div>; }

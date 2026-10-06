@@ -1,0 +1,1 @@
+export default function DragDropContent() { return <div>Drag Drop Content Component</div>; }
