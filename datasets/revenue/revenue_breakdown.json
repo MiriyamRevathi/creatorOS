@@ -1,0 +1,23 @@
+{
+  "summary": {
+    "total_revenue_usd": 48250.00,
+    "monthly_recurring_revenue": 14200.00,
+    "average_rpm": 8.45,
+    "growth_rate_mom": 18.2
+  },
+  "sources": [
+    { "source": "AdSense / Platform Ads", "amount_usd": 18450.00, "percentage": 38.2 },
+    { "source": "Brand Sponsorships", "amount_usd": 16200.00, "percentage": 33.6 },
+    { "source": "Digital Products (Store)", "amount_usd": 8600.00, "percentage": 17.8 },
+    { "source": "Affiliate Marketing", "amount_usd": 3200.00, "percentage": 6.6 },
+    { "source": "Newsletter Subscriptions", "amount_usd": 1800.00, "percentage": 3.7 }
+  ],
+  "monthly_trend": [
+    { "month": "May 2026", "revenue": 5400.00, "rpm": 6.80 },
+    { "month": "Jun 2026", "revenue": 6800.00, "rpm": 7.10 },
+    { "month": "Jul 2026", "revenue": 8100.00, "rpm": 7.60 },
+    { "month": "Aug 2026", "revenue": 10500.00, "rpm": 8.00 },
+    { "month": "Sep 2026", "revenue": 13250.00, "rpm": 8.45 },
+    { "month": "Oct 2026 (Est.)", "revenue": 14200.00, "rpm": 8.90 }
+  ]
+}

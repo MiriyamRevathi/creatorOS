@@ -1,0 +1,37 @@
+{
+  "age_groups": [
+    { "range": "18-24", "percentage": 24.5 },
+    { "range": "25-34", "percentage": 46.2 },
+    { "range": "35-44", "percentage": 18.8 },
+    { "range": "45-54", "percentage": 7.3 },
+    { "range": "55+", "percentage": 3.2 }
+  ],
+  "gender_distribution": [
+    { "gender": "Male", "percentage": 62.4 },
+    { "gender": "Female", "percentage": 34.1 },
+    { "gender": "Non-binary / Other", "percentage": 3.5 }
+  ],
+  "top_countries": [
+    { "country": "United States", "code": "US", "percentage": 38.5, "followers": 186725 },
+    { "country": "India", "code": "IN", "percentage": 21.2, "followers": 102820 },
+    { "country": "United Kingdom", "code": "GB", "percentage": 9.4, "followers": 45590 },
+    { "country": "Germany", "code": "DE", "percentage": 7.1, "followers": 34435 },
+    { "country": "Canada", "code": "CA", "percentage": 5.8, "followers": 28130 },
+    { "country": "Others", "code": "GLOBAL", "percentage": 18.0, "followers": 87300 }
+  ],
+  "device_usage": [
+    { "device": "Mobile Phone", "percentage": 68.2 },
+    { "device": "Desktop / Laptop", "percentage": 26.5 },
+    { "device": "Tablet / TV", "percentage": 5.3 }
+  ],
+  "peak_active_hours": [
+    { "hour": "00:00", "activity_index": 22 },
+    { "hour": "03:00", "activity_index": 12 },
+    { "hour": "06:00", "activity_index": 28 },
+    { "hour": "09:00", "activity_index": 65 },
+    { "hour": "12:00", "activity_index": 82 },
+    { "hour": "15:00", "activity_index": 96 },
+    { "hour": "18:00", "activity_index": 100 },
+    { "hour": "21:00", "activity_index": 74 }
+  ]
+}
