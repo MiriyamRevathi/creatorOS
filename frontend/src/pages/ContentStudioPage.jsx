@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { contentService } from '../services/contentService';
+import { useNotification } from '../context/NotificationContext';
 import { ContentPreview } from '../components/studio/ContentPreview';
 import { LocalAssistantDrawer } from '../components/studio/LocalAssistantDrawer';
 import { Button } from '../components/common/Button';
@@ -141,9 +142,12 @@ export function ContentStudioPage({
     }));
   };
 
+  const notificationCtx = useNotification();
+  const addToast = notificationCtx?.addToast || ((title, msg) => console.log(title, msg));
+
   const handleSave = async (targetStatus = null) => {
     if (!formData.title.trim()) {
-      alert('Content title is required.');
+      addToast('Title Required', 'Please enter a title for your content before saving.', 'warning');
       return;
     }
 
@@ -164,12 +168,21 @@ export function ContentStudioPage({
       }
 
       setFormData((prev) => ({ ...prev, status: result.status }));
+      const isPublished = targetStatus === 'Published' || result.status === 'Published';
+      addToast(
+        isPublished ? 'Published Successfully' : 'Draft Saved',
+        isPublished
+          ? `"${formData.title}" is now marked as Published!`
+          : `"${formData.title}" saved to your content library.`,
+        'success'
+      );
       setSaveFeedback({
         type: 'success',
-        message: targetStatus === 'Published' ? 'Published successfully!' : 'Draft saved successfully!',
+        message: isPublished ? 'Published successfully!' : 'Draft saved successfully!',
       });
       setTimeout(() => setSaveFeedback(null), 3000);
     } catch (err) {
+      addToast('Save Failed', err.message || 'Failed to save content', 'error');
       setSaveFeedback({
         type: 'error',
         message: err.message || 'Failed to save content',

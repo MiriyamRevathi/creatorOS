@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ideasService } from '../services/ideasService';
 import { contentService } from '../services/contentService';
+import { useNotification } from '../context/NotificationContext';
 import { IdeaCard } from '../components/ideas/IdeaCard';
 import { IdeasKanban } from '../components/ideas/IdeasKanban';
 import { IdeasFilterBar } from '../components/ideas/IdeasFilterBar';
@@ -13,6 +14,9 @@ import { Button } from '../components/common/Button';
 
 export function IdeasPage({ onConvertIdeaToStudio }) {
   const navigate = useNavigate();
+  const notificationCtx = useNotification();
+  const addToast = notificationCtx?.addToast || ((title, msg) => console.log(title, msg));
+
   const [ideas, setIdeas] = useState([]);
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -77,14 +81,16 @@ export function IdeasPage({ onConvertIdeaToStudio }) {
       setModalLoading(true);
       if (editingIdea && editingIdea.id) {
         await ideasService.updateIdea(editingIdea.id, formData);
+        addToast('Idea Updated', `"${formData.title}" updated successfully!`, 'success');
       } else {
         await ideasService.createIdea(formData);
+        addToast('Idea Captured', `"${formData.title}" added to your idea vault!`, 'success');
       }
       setModalOpen(false);
       setEditingIdea(null);
       await loadIdeas();
     } catch (err) {
-      alert(`Save error: ${err.message}`);
+      addToast('Error Saving Idea', err.message, 'error');
     } finally {
       setModalLoading(false);
     }
@@ -100,11 +106,12 @@ export function IdeasPage({ onConvertIdeaToStudio }) {
     try {
       setDeleteLoading(true);
       await ideasService.deleteIdea(ideaToDelete.id);
+      addToast('Idea Deleted', `"${ideaToDelete.title}" removed.`, 'info');
       setDeleteConfirmOpen(false);
       setIdeaToDelete(null);
       await loadIdeas();
     } catch (err) {
-      alert(`Delete error: ${err.message}`);
+      addToast('Deletion Failed', err.message, 'error');
     } finally {
       setDeleteLoading(false);
     }
@@ -116,9 +123,10 @@ export function IdeasPage({ onConvertIdeaToStudio }) {
     } else {
       try {
         const createdDraft = await contentService.convertIdeaToContent(idea.id);
+        addToast('Studio Ready', `Opened "${idea.title}" in Content Studio!`, 'success');
         navigate(`/studio?id=${createdDraft.id}`);
       } catch (err) {
-        alert(`Conversion error: ${err.message}`);
+        addToast('Conversion Error', err.message, 'error');
       }
     }
   };
@@ -130,24 +138,24 @@ export function IdeasPage({ onConvertIdeaToStudio }) {
         <div>
           <div className="flex items-center gap-2">
             <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[#f4eef7] text-[#412653] uppercase tracking-wider">
-              Contributor 2 Module
+              Ideas Hub & Discovery
             </span>
           </div>
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight mt-1">
             Idea Vault & Brainstorming
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
-            Capture raw thoughts, prioritize upcoming concepts, and convert winning ideas into content drafts.
+            Capture raw creative sparks, prioritize upcoming concepts, and seamlessly transform ideas into content drafts.
           </p>
         </div>
 
         <Button
           variant="primary"
           onClick={() => handleOpenCreateModal()}
-          className="shrink-0"
+          className="shrink-0 shadow-sm hover:shadow transition-all"
         >
-          <Plus className="h-4 w-4" />
-          <span>Capture Idea</span>
+          <Plus className="h-4 w-4 mr-1.5" />
+          <span>Capture New Idea</span>
         </Button>
       </div>
 
@@ -224,8 +232,8 @@ export function IdeasPage({ onConvertIdeaToStudio }) {
         <EmptyState
           icon={Lightbulb}
           title="No content ideas found"
-          description="Try modifying your search keywords or clear current filters to discover ideas."
-          actionLabel="Create New Idea"
+          description="Every viral piece starts with a rough thought. Click below to add your first idea."
+          actionLabel="Capture First Idea"
           onAction={() => handleOpenCreateModal()}
         />
       ) : viewMode === 'kanban' ? (
@@ -271,8 +279,8 @@ export function IdeasPage({ onConvertIdeaToStudio }) {
         }}
         onConfirm={handleConfirmDelete}
         title="Delete Content Idea"
-        message={`Are you sure you want to permanently delete "${ideaToDelete?.title}"? This action cannot be undone.`}
-        confirmText="Delete Idea"
+        message={`Are you sure you want to permanently remove "${ideaToDelete?.title}" from your idea vault? This action cannot be undone.`}
+        confirmText="Yes, Delete Idea"
         loading={deleteLoading}
       />
     </div>

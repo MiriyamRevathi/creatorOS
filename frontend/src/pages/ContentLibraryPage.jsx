@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { contentService } from '../services/contentService';
+import { useNotification } from '../context/NotificationContext';
 import { ContentCard } from '../components/library/ContentCard';
 import { ContentTableView } from '../components/library/ContentTableView';
 import { ContentLibraryFilterBar } from '../components/library/ContentLibraryFilterBar';
@@ -60,6 +61,9 @@ export function ContentLibraryPage({ onOpenInStudio, onNewContent }) {
     loadContent();
   }, [loadContent]);
 
+  const notificationCtx = useNotification();
+  const addToast = notificationCtx?.addToast || ((title, msg) => console.log(title, msg));
+
   const handleDeletePrompt = (item) => {
     setItemToDelete(item);
     setDeleteConfirmOpen(true);
@@ -70,11 +74,12 @@ export function ContentLibraryPage({ onOpenInStudio, onNewContent }) {
     try {
       setDeleteLoading(true);
       await contentService.deleteContent(itemToDelete.id);
+      addToast('Asset Deleted', `"${itemToDelete.title}" removed from library.`, 'info');
       setDeleteConfirmOpen(false);
       setItemToDelete(null);
       await loadContent();
     } catch (err) {
-      alert(`Delete error: ${err.message}`);
+      addToast('Delete Failed', err.message, 'error');
     } finally {
       setDeleteLoading(false);
     }
@@ -83,20 +88,26 @@ export function ContentLibraryPage({ onOpenInStudio, onNewContent }) {
   const handleArchive = async (item) => {
     try {
       await contentService.updateContent(item.id, { status: 'Archived' });
+      addToast('Archived', `"${item.title}" moved to archive.`, 'info');
       await loadContent();
     } catch (err) {
-      alert(`Archive error: ${err.message}`);
+      addToast('Archive Failed', err.message, 'error');
     }
   };
 
   const handleExportJson = () => {
-    const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(contentList, null, 2));
-    const downloadAnchor = document.createElement('a');
-    downloadAnchor.setAttribute('href', dataStr);
-    downloadAnchor.setAttribute('download', `creatoros_content_export_${Date.now()}.json`);
-    document.body.appendChild(downloadAnchor);
-    downloadAnchor.click();
-    downloadAnchor.remove();
+    try {
+      const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(contentList, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute('href', dataStr);
+      downloadAnchor.setAttribute('download', `creatoros_content_export_${Date.now()}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      addToast('Export Complete', `${contentList.length} items exported to JSON file!`, 'success');
+    } catch (err) {
+      addToast('Export Failed', err.message, 'error');
+    }
   };
 
   return (
@@ -106,7 +117,7 @@ export function ContentLibraryPage({ onOpenInStudio, onNewContent }) {
         <div>
           <div className="flex items-center gap-2">
             <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[#f4eef7] text-[#412653] uppercase tracking-wider">
-              Contributor 2 Module
+              Asset Vault & Catalog
             </span>
           </div>
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight mt-1">
@@ -118,14 +129,14 @@ export function ContentLibraryPage({ onOpenInStudio, onNewContent }) {
         </div>
 
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={handleExportJson}>
-            <Download className="h-3.5 w-3.5" />
-            <span>Export JSON</span>
+          <Button variant="outline" size="sm" onClick={handleExportJson} className="hover:bg-slate-50">
+            <Download className="h-3.5 w-3.5 mr-1" />
+            <span>Export Catalog (.JSON)</span>
           </Button>
 
-          <Button variant="primary" size="sm" onClick={onNewContent || (() => navigate('/studio'))}>
-            <Plus className="h-3.5 w-3.5" />
-            <span>New in Studio</span>
+          <Button variant="primary" size="sm" onClick={onNewContent || (() => navigate('/studio'))} className="shadow-xs hover:shadow">
+            <Plus className="h-3.5 w-3.5 mr-1" />
+            <span>Open in Studio</span>
           </Button>
         </div>
       </div>
