@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cust_001",
+    "name": "Elena Rostova",
+    "email": "elena.rostova@example.com",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    "total_orders": 3,
+    "total_spent": 127.00,
+    "last_order_date": "2026-10-05T14:22:00Z",
+    "tags": ["VIP Customer", "Repeat Buyer"],
+    "notes": "Enrolled in E-Book and Notion Template. Highly engaged creator.",
+    "created_at": "2026-08-12T10:00:00Z"
+  },
+  {
+    "id": "cust_002",
+    "name": "Marcus Vance",
+    "email": "marcus.v@techstudio.io",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    "total_orders": 2,
+    "total_spent": 198.00,
+    "last_order_date": "2026-10-04T09:10:00Z",
+    "tags": ["High Value", "Masterclass Student"],
+    "notes": "Purchased Virality Masterclass and Notion OS.",
+    "created_at": "2026-09-02T11:00:00Z"
+  },
+  {
+    "id": "cust_003",
+    "name": "Sarah Chen",
+    "email": "sarah.chen@designhub.co",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+    "total_orders": 1,
+    "total_spent": 49.00,
+    "last_order_date": "2026-10-03T18:45:00Z",
+    "tags": ["New Customer"],
+    "notes": "Interested in design productivity templates.",
+    "created_at": "2026-10-03T18:45:00Z"
+  },
+  {
+    "id": "cust_004",
+    "name": "David Kim",
+    "email": "david.kim@streamer.net",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    "total_orders": 2,
+    "total_spent": 58.00,
+    "last_order_date": "2026-10-02T11:30:00Z",
+    "tags": ["Repeat Buyer"],
+    "notes": "Video editor & YouTube creator.",
+    "created_at": "2026-08-28T14:15:00Z"
+  },
+  {
+    "id": "cust_005",
+    "name": "Amara Okafor",
+    "email": "amara.o@lifestylemedia.org",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+    "total_orders": 1,
+    "total_spent": 19.00,
+    "last_order_date": "2026-10-01T16:05:00Z",
+    "tags": ["New Customer"],
+    "notes": "Podcaster and audio producer.",
+    "created_at": "2026-10-01T16:05:00Z"
+  }
+]

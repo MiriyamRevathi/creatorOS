@@ -1,0 +1,62 @@
+[
+  {
+    "id": "txn_001",
+    "reference": "TXN-9021-INC",
+    "type": "income",
+    "category": "product_sales",
+    "amount": 149.00,
+    "description": "Order #ORD-88129B - Short-Form Video Virality Masterclass",
+    "date": "2026-10-04T09:10:00Z",
+    "status": "completed",
+    "payment_method": "Simulated Checkout",
+    "related_entity_id": "ord_102"
+  },
+  {
+    "id": "txn_002",
+    "reference": "TXN-8810-SPON",
+    "type": "income",
+    "category": "sponsorships",
+    "amount": 5000.00,
+    "description": "Notion App Sponsorship - Q3 Dedicated Integration",
+    "date": "2026-10-03T12:00:00Z",
+    "status": "completed",
+    "payment_method": "Wire Transfer",
+    "related_entity_id": "spon_001"
+  },
+  {
+    "id": "txn_003",
+    "reference": "TXN-7721-EXP",
+    "type": "expense",
+    "category": "team",
+    "amount": 2200.00,
+    "description": "Freelance Video Editor & Thumbnail Artist Monthly Retainer",
+    "date": "2026-10-02T00:00:00Z",
+    "status": "completed",
+    "payment_method": "Direct Deposit",
+    "related_entity_id": "exp_002"
+  },
+  {
+    "id": "txn_004",
+    "reference": "TXN-6612-INC",
+    "type": "income",
+    "category": "product_sales",
+    "amount": 49.00,
+    "description": "Order #ORD-76291C - Creator Growth OS Notion Template",
+    "date": "2026-10-03T18:45:00Z",
+    "status": "completed",
+    "payment_method": "Simulated Checkout",
+    "related_entity_id": "ord_103"
+  },
+  {
+    "id": "txn_005",
+    "reference": "TXN-5509-EXP",
+    "type": "expense",
+    "category": "software",
+    "amount": 185.00,
+    "description": "Adobe Creative Cloud & Cloud Storage Subscriptions",
+    "date": "2026-10-01T00:00:00Z",
+    "status": "completed",
+    "payment_method": "Corporate Card",
+    "related_entity_id": "exp_001"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "exp_001",
+    "title": "Adobe Creative Cloud & Hosting",
+    "category": "software",
+    "amount": 185.00,
+    "recurring": true,
+    "frequency": "Monthly",
+    "date": "2026-10-01T00:00:00Z",
+    "status": "paid"
+  },
+  {
+    "id": "exp_002",
+    "title": "Freelance Video Editor & Thumbnail Artist",
+    "category": "team",
+    "amount": 2200.00,
+    "recurring": true,
+    "frequency": "Monthly",
+    "date": "2026-10-02T00:00:00Z",
+    "status": "paid"
+  },
+  {
+    "id": "exp_003",
+    "title": "Camera Gear Upgrade (Sony FX3 Lens)",
+    "category": "equipment",
+    "amount": 1450.00,
+    "recurring": false,
+    "frequency": "One-time",
+    "date": "2026-09-18T00:00:00Z",
+    "status": "paid"
+  },
+  {
+    "id": "exp_004",
+    "title": "Instagram & YouTube Ad Promotion",
+    "category": "marketing",
+    "amount": 650.00,
+    "recurring": false,
+    "frequency": "Monthly",
+    "date": "2026-09-25T00:00:00Z",
+    "status": "paid"
+  },
+  {
+    "id": "exp_005",
+    "title": "Epidemic Sound & Artlist Licenses",
+    "category": "software",
+    "amount": 49.00,
+    "recurring": true,
+    "frequency": "Monthly",
+    "date": "2026-10-03T00:00:00Z",
+    "status": "paid"
+  }
+]

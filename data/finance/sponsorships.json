@@ -1,0 +1,35 @@
+[
+  {
+    "id": "spon_001",
+    "brand_name": "Notion",
+    "logo": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=200&q=80",
+    "campaign": "Fall Productivity Workflows",
+    "contract_value": 5000.00,
+    "deliverables": ["1x Dedicated YouTube Video", "2x Shorts/Reels"],
+    "status": "paid",
+    "payout_date": "2026-10-03T00:00:00Z",
+    "contact_person": "Alex Morgan (Partner Manager)"
+  },
+  {
+    "id": "spon_002",
+    "brand_name": "Epidemic Sound",
+    "logo": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=200&q=80",
+    "campaign": "Creator Soundtracks 2026",
+    "contract_value": 3500.00,
+    "deliverables": ["3x Video Sound Track Mentions", "Description Link Placement"],
+    "status": "invoiced",
+    "payout_date": "2026-10-15T00:00:00Z",
+    "contact_person": "Sophie Bennett (Influencer Relations)"
+  },
+  {
+    "id": "spon_003",
+    "brand_name": "Epidemic Creator Gear",
+    "logo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    "campaign": "Studio Desk Accessories Review",
+    "contract_value": 4000.00,
+    "deliverables": ["1x Integrated Video Segment", "1x Instagram Story Set"],
+    "status": "negotiating",
+    "payout_date": "2026-11-01T00:00:00Z",
+    "contact_person": "Chris Taylor (Brand Lead)"
+  }
+]

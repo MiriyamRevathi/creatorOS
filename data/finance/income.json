@@ -1,0 +1,47 @@
+[
+  {
+    "id": "inc_001",
+    "source": "Digital Products",
+    "category": "product_sales",
+    "amount": 14820.00,
+    "month": "September 2026",
+    "growth": 14.5,
+    "description": "E-Book, Masterclass, and Notion Template direct sales"
+  },
+  {
+    "id": "inc_002",
+    "source": "YouTube AdSense",
+    "category": "ad_revenue",
+    "amount": 4350.00,
+    "month": "September 2026",
+    "growth": 8.2,
+    "description": "Long-form channel ad revenue payout"
+  },
+  {
+    "id": "inc_003",
+    "source": "Brand Sponsorships",
+    "category": "sponsorships",
+    "amount": 12500.00,
+    "month": "September 2026",
+    "growth": 25.0,
+    "description": "Tech & Software brand integrations"
+  },
+  {
+    "id": "inc_004",
+    "source": "Affiliate Commissions",
+    "category": "affiliate",
+    "amount": 2180.00,
+    "month": "September 2026",
+    "growth": 5.4,
+    "description": "Software referral links (Notion, Adobe, Epidemic Sound)"
+  },
+  {
+    "id": "inc_005",
+    "source": "Community Subscriptions",
+    "category": "subscriptions",
+    "amount": 3400.00,
+    "month": "September 2026",
+    "growth": 12.0,
+    "description": "Monthly VIP Discord & mastermind membership"
+  }
+]

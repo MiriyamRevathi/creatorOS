@@ -1,0 +1,38 @@
+[
+  {
+    "id": "goal_001",
+    "title": "Reach $50,000 Quarterly Revenue",
+    "target_amount": 50000.00,
+    "current_amount": 37150.00,
+    "category": "revenue",
+    "target_date": "2026-12-31",
+    "status": "in_progress"
+  },
+  {
+    "id": "goal_002",
+    "title": "Sell 1,000 E-Book Copies",
+    "target_amount": 1000.00,
+    "current_amount": 510.00,
+    "category": "sales_volume",
+    "target_date": "2026-11-30",
+    "status": "in_progress"
+  },
+  {
+    "id": "goal_003",
+    "title": "Maintain 75%+ Net Profit Margin",
+    "target_amount": 75.00,
+    "current_amount": 78.40,
+    "category": "profit_margin",
+    "target_date": "2026-10-31",
+    "status": "achieved"
+  },
+  {
+    "id": "goal_004",
+    "title": "Secure 5 Premium Brand Deals",
+    "target_amount": 5.00,
+    "current_amount": 3.00,
+    "category": "sponsorships",
+    "target_date": "2026-12-15",
+    "status": "in_progress"
+  }
+]
