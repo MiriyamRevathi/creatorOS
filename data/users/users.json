@@ -10,5 +10,29 @@
       "creator"
     ],
     "password_hash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f"
+  },
+  {
+    "id": "923cfb12-597d-4da3-b61f-e5a25cdcf111",
+    "email": "test_radhika@gmail.com",
+    "full_name": "radhika",
+    "username": "radhika2",
+    "verified": false,
+    "created_at": "2026-10-06T07:50:25.934838",
+    "roles": [
+      "creator"
+    ],
+    "password_hash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f"
+  },
+  {
+    "id": "5201a0e2-9d73-4f70-94c9-274920364d14",
+    "email": "radhika1@gmail.com",
+    "full_name": "radhika ",
+    "username": "radhika",
+    "verified": false,
+    "created_at": "2026-10-06T07:52:03.619080",
+    "roles": [
+      "creator"
+    ],
+    "password_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
   }
 ]

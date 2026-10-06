@@ -1,5 +1,25 @@
 [
   {
+    "id": "b7f66304-efd2-46e3-861f-b9358f10c0b7",
+    "user_id": "5201a0e2-9d73-4f70-94c9-274920364d14",
+    "title": "Welcome to CreatorOS! \ud83c\udf89",
+    "message": "Your creator workspace is ready. Complete your profile setup to unlock full potential.",
+    "category": "info",
+    "is_read": false,
+    "link": "",
+    "created_at": "2026-10-06T07:52:03.641670"
+  },
+  {
+    "id": "5cff05cf-4763-49c8-a29a-5f7e5e6c3ed1",
+    "user_id": "923cfb12-597d-4da3-b61f-e5a25cdcf111",
+    "title": "Welcome to CreatorOS! \ud83c\udf89",
+    "message": "Your creator workspace is ready. Complete your profile setup to unlock full potential.",
+    "category": "info",
+    "is_read": false,
+    "link": "",
+    "created_at": "2026-10-06T07:50:25.981133"
+  },
+  {
     "id": "4adce71f-ebfc-4860-9cdc-9799ab65c8b9",
     "user_id": "b3227c9a-3b8a-4aef-ba54-f7c47536d9aa",
     "title": "Welcome to CreatorOS! \ud83c\udf89",
