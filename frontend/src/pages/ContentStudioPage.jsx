@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { contentService } from '../services/contentService';
 import { ContentPreview } from '../components/studio/ContentPreview';
 import { LocalAssistantDrawer } from '../components/studio/LocalAssistantDrawer';
@@ -49,7 +50,11 @@ export function ContentStudioPage({
   convertedFromIdea = null,
   onNavigateToLibrary,
 }) {
-  const [contentId, setContentId] = useState(initialContentId);
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const activeId = initialContentId || searchParams.get('id');
+
+  const [contentId, setContentId] = useState(activeId);
   const [formData, setFormData] = useState({
     title: '',
     content_type: 'Video',
@@ -86,10 +91,10 @@ export function ContentStudioPage({
       if (convertedFromIdea.id && !convertedFromIdea.id.startsWith('idea-')) {
         setContentId(convertedFromIdea.id);
       }
-    } else if (initialContentId) {
+    } else if (activeId) {
       const loadExisting = async () => {
         try {
-          const item = await contentService.getContentById(initialContentId);
+          const item = await contentService.getContentById(activeId);
           setFormData({
             title: item.title || '',
             content_type: item.content_type || 'Video',
@@ -109,7 +114,7 @@ export function ContentStudioPage({
       };
       loadExisting();
     }
-  }, [initialContentId, convertedFromIdea]);
+  }, [activeId, convertedFromIdea]);
 
   // Calculations for word count and reading time
   const bodyText = formData.body || '';
@@ -179,15 +184,13 @@ export function ContentStudioPage({
       {/* Studio Header Bar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-4 rounded-xl border border-slate-200">
         <div className="flex items-center gap-3">
-          {onNavigateToLibrary && (
-            <button
-              onClick={onNavigateToLibrary}
-              className="p-1.5 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 transition-colors"
-              title="Return to Content Library"
-            >
-              <ArrowLeft className="h-4 w-4" />
-            </button>
-          )}
+          <button
+            onClick={onNavigateToLibrary || (() => navigate('/library'))}
+            className="p-1.5 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 transition-colors"
+            title="Return to Content Library"
+          >
+            <ArrowLeft className="h-4 w-4" />
+          </button>
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[#f4eef7] text-[#412653] uppercase tracking-wider">

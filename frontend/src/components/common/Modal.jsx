@@ -1,57 +1,48 @@
 import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 
-export function Modal({ isOpen, onClose, title, children, maxWidth = 'max-w-2xl' }) {
+export const Modal = ({ isOpen, onClose, title, children, maxWidth = 'max-w-xl' }) => {
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isOpen) onClose();
     };
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', handleKeyDown);
+      window.addEventListener('keydown', handleEscape);
     }
     return () => {
       document.body.style.overflow = 'unset';
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keydown', handleEscape);
     };
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto">
-      {/* Backdrop */}
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto"
+      onClick={onClose}
+    >
       <div
-        className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
-        onClick={onClose}
-        aria-hidden="true"
-      />
-
-      {/* Dialog container */}
-      <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-        <div
-          className={`relative transform overflow-hidden rounded-xl bg-white text-left shadow-2xl transition-all sm:my-8 w-full ${maxWidth} border border-slate-200`}
-          role="dialog"
-          aria-modal="true"
-        >
-          {/* Header */}
-          <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
-            <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-            <button
-              onClick={onClose}
-              className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
-              aria-label="Close dialog"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-
-          {/* Body */}
-          <div className="px-6 py-5">{children}</div>
+        className={`w-full ${maxWidth} bg-white dark:bg-brand-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden my-8`}
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{title}</h3>
+          <button
+            onClick={onClose}
+            className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
+        <div className="p-6">{children}</div>
       </div>
     </div>
   );
-}
+};
+
+export default Modal;

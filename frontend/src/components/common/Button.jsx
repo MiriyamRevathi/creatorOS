@@ -1,39 +1,40 @@
 import React from 'react';
 
-export function Button({
+export const Button = ({
   children,
-  variant = 'primary',
-  size = 'md',
+  variant = 'primary', // primary, secondary, accent, action, outline, ghost, danger
+  size = 'md', // sm, md, lg
+  className = '',
   disabled = false,
   loading = false,
-  className = '',
-  type = 'button',
   onClick,
+  type = 'button',
   ...props
-}) {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+}) => {
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
 
-  const sizeClasses = {
-    sm: 'text-xs px-2.5 py-1.5 gap-1.5',
-    md: 'text-sm px-4 py-2 gap-2',
-    lg: 'text-base px-5 py-2.5 gap-2.5',
+  const variants = {
+    primary: 'bg-brand-purple hover:bg-brand-purple/90 text-white focus:ring-brand-purple shadow-sm',
+    secondary: 'bg-brand-slate hover:bg-brand-slate/90 text-white focus:ring-brand-slate shadow-sm',
+    accent: 'bg-brand-lavender hover:bg-brand-lavender/90 text-white focus:ring-brand-lavender shadow-sm',
+    action: 'bg-brand-coral hover:bg-brand-coral/90 text-white focus:ring-brand-coral shadow-sm',
+    outline: 'border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-slate-400',
+    ghost: 'text-slate-600 hover:text-brand-purple hover:bg-slate-100 focus:ring-slate-300',
+    danger: 'bg-rose-600 hover:bg-rose-700 text-white focus:ring-rose-500 shadow-sm',
   };
 
-  const variantClasses = {
-    primary: 'bg-[#412653] text-white hover:bg-[#321d40] focus:ring-[#412653] shadow-sm',
-    secondary: 'bg-[#3F567F] text-white hover:bg-[#334668] focus:ring-[#3F567F] shadow-sm',
-    action: 'bg-[#E0563F] text-white hover:bg-[#c94630] focus:ring-[#E0563F] shadow-sm',
-    outline: 'border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-slate-400',
-    ghost: 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus:ring-slate-400',
-    danger: 'bg-rose-600 text-white hover:bg-rose-700 focus:ring-rose-500',
+  const sizes = {
+    sm: 'px-2.5 py-1.5 text-xs gap-1.5',
+    md: 'px-4 py-2 text-sm gap-2',
+    lg: 'px-6 py-3 text-base font-semibold gap-2.5',
   };
 
   return (
     <button
       type={type}
+      className={`${baseStyles} ${variants[variant] || variants.primary} ${sizes[size] || sizes.md} ${className}`}
       disabled={disabled || loading}
       onClick={onClick}
-      className={`${baseClasses} ${sizeClasses[size] || sizeClasses.md} ${variantClasses[variant] || variantClasses.primary} ${className}`}
       {...props}
     >
       {loading && (
@@ -45,4 +46,6 @@ export function Button({
       {children}
     </button>
   );
-}
+};
+
+export default Button;

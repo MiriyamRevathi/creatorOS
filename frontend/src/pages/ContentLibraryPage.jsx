@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { contentService } from '../services/contentService';
 import { ContentCard } from '../components/library/ContentCard';
 import { ContentTableView } from '../components/library/ContentTableView';
@@ -17,6 +18,7 @@ import {
 } from 'lucide-react';
 
 export function ContentLibraryPage({ onOpenInStudio, onNewContent }) {
+  const navigate = useNavigate();
   const [contentList, setContentList] = useState([]);
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -121,7 +123,7 @@ export function ContentLibraryPage({ onOpenInStudio, onNewContent }) {
             <span>Export JSON</span>
           </Button>
 
-          <Button variant="primary" size="sm" onClick={onNewContent}>
+          <Button variant="primary" size="sm" onClick={onNewContent || (() => navigate('/studio'))}>
             <Plus className="h-3.5 w-3.5" />
             <span>New in Studio</span>
           </Button>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ideasService } from '../services/ideasService';
+import { contentService } from '../services/contentService';
 import { IdeaCard } from '../components/ideas/IdeaCard';
 import { IdeasKanban } from '../components/ideas/IdeasKanban';
 import { IdeasFilterBar } from '../components/ideas/IdeasFilterBar';
@@ -10,6 +12,7 @@ import { Lightbulb, Plus, Sparkles, Clock, CheckCircle2, ListTodo } from 'lucide
 import { Button } from '../components/common/Button';
 
 export function IdeasPage({ onConvertIdeaToStudio }) {
+  const navigate = useNavigate();
   const [ideas, setIdeas] = useState([]);
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -107,9 +110,16 @@ export function IdeasPage({ onConvertIdeaToStudio }) {
     }
   };
 
-  const handleConvertIdea = (idea) => {
+  const handleConvertIdea = async (idea) => {
     if (onConvertIdeaToStudio) {
       onConvertIdeaToStudio(idea);
+    } else {
+      try {
+        const createdDraft = await contentService.convertIdeaToContent(idea.id);
+        navigate(`/studio?id=${createdDraft.id}`);
+      } catch (err) {
+        alert(`Conversion error: ${err.message}`);
+      }
     }
   };
 

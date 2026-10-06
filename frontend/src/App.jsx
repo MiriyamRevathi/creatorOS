@@ -1,110 +1,104 @@
-import React, { useState } from 'react';
-import { Sidebar } from './components/layout/Sidebar';
-import { Topbar } from './components/layout/Topbar';
-import { DashboardOverview } from './pages/DashboardOverview';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { CreatorProvider } from './context/CreatorContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { NotificationProvider } from './context/NotificationContext';
+import { ToastContainer } from './components/common/Toast';
+import { ProtectedRoute } from './components/layout/ProtectedRoute';
+import { DashboardLayout } from './components/layout/DashboardLayout';
+
+// Landing Pages (Contributor 1)
+import { Home } from './pages/landing/Home';
+import { Features } from './pages/landing/Features';
+import { Pricing } from './pages/landing/Pricing';
+import { About } from './pages/landing/About';
+import { Contact } from './pages/landing/Contact';
+import { FAQ } from './pages/landing/FAQ';
+
+// Auth Pages (Contributor 1)
+import { Login } from './pages/auth/Login';
+import { Register } from './pages/auth/Register';
+import { ForgotPassword } from './pages/auth/ForgotPassword';
+import { ResetPassword } from './pages/auth/ResetPassword';
+import { VerifyAccount } from './pages/auth/VerifyAccount';
+
+// Creator Pages (Contributor 1)
+import { CreatorProfile } from './pages/creator/CreatorProfile';
+import { EditProfile } from './pages/creator/EditProfile';
+import { Portfolio } from './pages/creator/Portfolio';
+import { Preferences } from './pages/creator/Preferences';
+
+// Dashboard Pages (Contributor 1)
+import { Dashboard } from './pages/dashboard/Dashboard';
+import { Activity } from './pages/dashboard/Activity';
+import { Notifications } from './pages/dashboard/Notifications';
+
+// Settings Pages (Contributor 1)
+import { Settings } from './pages/settings/Settings';
+
+// Contributor 2 Pages (Ideas, Content Studio & Content Library)
 import { IdeasPage } from './pages/IdeasPage';
 import { ContentStudioPage } from './pages/ContentStudioPage';
 import { ContentLibraryPage } from './pages/ContentLibraryPage';
-import { contentService } from './services/contentService';
 
 export function App() {
-  const [currentTab, setCurrentTab] = useState('dashboard'); // 'dashboard', 'ideas', 'studio', 'library'
-  const [studioContentId, setStudioContentId] = useState(null);
-  const [convertedIdea, setConvertedIdea] = useState(null);
-
-  const handleConvertIdeaToStudio = async (idea) => {
-    try {
-      const createdDraft = await contentService.convertIdeaToContent(idea.id);
-      setConvertedIdea(createdDraft);
-      setStudioContentId(createdDraft.id);
-      setCurrentTab('studio');
-    } catch (e) {
-      alert(`Conversion error: ${e.message}`);
-    }
-  };
-
-  const handleOpenContentInStudio = (contentItem) => {
-    setStudioContentId(contentItem.id);
-    setConvertedIdea(null);
-    setCurrentTab('studio');
-  };
-
-  const handleNewContentStudio = () => {
-    setStudioContentId(null);
-    setConvertedIdea(null);
-    setCurrentTab('studio');
-  };
-
-  const getPageTitle = () => {
-    switch (currentTab) {
-      case 'ideas':
-        return { title: 'Idea Vault', subtitle: 'Capture & prioritize creator concepts' };
-      case 'studio':
-        return { title: 'Content Studio', subtitle: 'Draft, preview, and produce multi-platform media' };
-      case 'library':
-        return { title: 'Content Library', subtitle: 'Central assets repository & published records' };
-      default:
-        return { title: 'Creator Dashboard', subtitle: 'Overview of ideas, production pipeline & content' };
-    }
-  };
-
-  const pageMeta = getPageTitle();
-
   return (
-    <div className="flex min-h-screen bg-[#F8FAFC]">
-      {/* Sidebar navigation */}
-      <Sidebar
-        currentTab={currentTab}
-        onNavigate={(tab) => {
-          if (tab === 'studio' && currentTab !== 'studio') {
-            setStudioContentId(null);
-            setConvertedIdea(null);
-          }
-          setCurrentTab(tab);
-        }}
-      />
+    <ThemeProvider>
+      <AuthProvider>
+        <NotificationProvider>
+          <CreatorProvider>
+            <div className="min-h-screen bg-white dark:bg-brand-darkBg font-sans text-slate-800 dark:text-slate-100">
+              <Routes>
+                {/* Landing Routes */}
+                <Route path="/" element={<Home />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/faq" element={<FAQ />} />
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0">
-        <Topbar
-          title={pageMeta.title}
-          subtitle={pageMeta.subtitle}
-          onNewIdea={() => setCurrentTab('ideas')}
-          onNewContent={handleNewContentStudio}
-          showSearch={currentTab === 'dashboard'}
-        />
+                {/* Auth Routes */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="/verify-account" element={<VerifyAccount />} />
 
-        <main className="flex-1 pb-16">
-          {currentTab === 'dashboard' && (
-            <DashboardOverview
-              onNavigateToIdeas={() => setCurrentTab('ideas')}
-              onNavigateToStudio={handleNewContentStudio}
-              onNavigateToLibrary={() => setCurrentTab('library')}
-              onOpenContentInStudio={handleOpenContentInStudio}
-            />
-          )}
+                {/* Protected Creator Profile Routes */}
+                <Route path="/creator/profile" element={<ProtectedRoute><CreatorProfile /></ProtectedRoute>} />
+                <Route path="/creator/edit" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
+                <Route path="/creator/portfolio" element={<ProtectedRoute><Portfolio /></ProtectedRoute>} />
+                <Route path="/creator/preferences" element={<ProtectedRoute><Preferences /></ProtectedRoute>} />
 
-          {currentTab === 'ideas' && (
-            <IdeasPage onConvertIdeaToStudio={handleConvertIdeaToStudio} />
-          )}
+                {/* Protected Dashboard Routes */}
+                <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+                <Route path="/dashboard/activity" element={<ProtectedRoute><Activity /></ProtectedRoute>} />
+                <Route path="/dashboard/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
 
-          {currentTab === 'studio' && (
-            <ContentStudioPage
-              initialContentId={studioContentId}
-              convertedFromIdea={convertedIdea}
-              onNavigateToLibrary={() => setCurrentTab('library')}
-            />
-          )}
+                {/* Contributor 2 — Ideas, Content Studio & Content Library Routes */}
+                <Route path="/ideas" element={<ProtectedRoute><DashboardLayout><IdeasPage /></DashboardLayout></ProtectedRoute>} />
+                <Route path="/dashboard/ideas" element={<ProtectedRoute><DashboardLayout><IdeasPage /></DashboardLayout></ProtectedRoute>} />
+                
+                <Route path="/studio" element={<ProtectedRoute><DashboardLayout><ContentStudioPage /></DashboardLayout></ProtectedRoute>} />
+                <Route path="/content" element={<ProtectedRoute><DashboardLayout><ContentStudioPage /></DashboardLayout></ProtectedRoute>} />
+                <Route path="/dashboard/studio" element={<ProtectedRoute><DashboardLayout><ContentStudioPage /></DashboardLayout></ProtectedRoute>} />
 
-          {currentTab === 'library' && (
-            <ContentLibraryPage
-              onOpenInStudio={handleOpenContentInStudio}
-              onNewContent={handleNewContentStudio}
-            />
-          )}
-        </main>
-      </div>
-    </div>
+                <Route path="/library" element={<ProtectedRoute><DashboardLayout><ContentLibraryPage /></DashboardLayout></ProtectedRoute>} />
+                <Route path="/dashboard/library" element={<ProtectedRoute><DashboardLayout><ContentLibraryPage /></DashboardLayout></ProtectedRoute>} />
+
+                {/* Protected Settings Routes */}
+                <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+
+                {/* Fallback */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+              <ToastContainer />
+            </div>
+          </CreatorProvider>
+        </NotificationProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 
