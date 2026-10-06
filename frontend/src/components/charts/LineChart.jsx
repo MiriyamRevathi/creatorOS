@@ -81,3 +81,5 @@ export default function LineChart({ data = [], xKey = 'label', yKey = 'value', h
     </div>
   );
 }
+
+// Chart Components Version 1.0.0
