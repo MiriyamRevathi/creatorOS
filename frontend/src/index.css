@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 font-sans antialiased selection:bg-brand-lavender/30 selection:text-brand-purple;
+    @apply bg-white text-gray-900 font-sans antialiased min-h-screen selection:bg-brand-lavender/30 selection:text-brand-purple;
   }
 }
 
@@ -18,4 +18,12 @@
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #d174d2;
   border-radius: 3px;
+}
+
+.subtle-border {
+  border: 1px solid rgba(65, 38, 83, 0.1);
+}
+
+.dark .subtle-border {
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

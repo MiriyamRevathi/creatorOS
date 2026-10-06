@@ -1,74 +1,95 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { CreatorProvider } from './context/CreatorContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { NotificationProvider } from './context/NotificationContext';
+import { ToastContainer } from './components/common/Toast';
+import { ProtectedRoute } from './components/layout/ProtectedRoute';
+
+// Landing Pages
+import { Home } from './pages/landing/Home';
+import { Features } from './pages/landing/Features';
+import { Pricing } from './pages/landing/Pricing';
+import { About } from './pages/landing/About';
+import { Contact } from './pages/landing/Contact';
+import { FAQ } from './pages/landing/FAQ';
+
+// Auth Pages
+import { Login } from './pages/auth/Login';
+import { Register } from './pages/auth/Register';
+import { ForgotPassword } from './pages/auth/ForgotPassword';
+import { ResetPassword } from './pages/auth/ResetPassword';
+import { VerifyAccount } from './pages/auth/VerifyAccount';
+
+// Creator Pages
+import { CreatorProfile } from './pages/creator/CreatorProfile';
+import { EditProfile } from './pages/creator/EditProfile';
+import { Portfolio } from './pages/creator/Portfolio';
+import { Preferences } from './pages/creator/Preferences';
+
+// Dashboard Pages
+import { Dashboard } from './pages/dashboard/Dashboard';
+import { Activity } from './pages/dashboard/Activity';
+import { Notifications } from './pages/dashboard/Notifications';
+
+// Settings Pages
+import { Settings } from './pages/settings/Settings';
+
+// Contributor 4 — Analytics & Trends Pages
 import Analytics from './pages/analytics/Analytics';
 import TrendExplorer from './pages/trends/TrendExplorer';
 
 export function App() {
-  const [currentModule, setCurrentModule] = useState('analytics');
-
   return (
-    <div className="min-h-screen bg-[#FDFCFE] flex flex-col font-sans">
-      {/* Top Global CreatorOS Navigation Header */}
-      <header className="bg-brand-purple text-white px-6 py-3.5 border-b border-purple-900 flex items-center justify-between shadow-md">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-brand-lavender text-brand-purple font-black flex items-center justify-center text-lg shadow">
-            OS
-          </div>
-          <div>
-            <h1 className="font-black text-lg tracking-tight leading-none text-white">CreatorOS</h1>
-            <span className="text-[10px] text-brand-lavender font-semibold tracking-wider uppercase">Unified Platform — Contributor 4</span>
-          </div>
-        </div>
+    <ThemeProvider>
+      <AuthProvider>
+        <NotificationProvider>
+          <CreatorProvider>
+            <div className="min-h-screen bg-white dark:bg-brand-darkBg font-sans text-slate-800 dark:text-slate-100">
+              <Routes>
+                {/* Landing Routes */}
+                <Route path="/" element={<Home />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/faq" element={<FAQ />} />
 
-        {/* Top Module Switcher */}
-        <div className="flex items-center gap-2 bg-purple-950/60 p-1 rounded-lg border border-purple-800">
-          <button
-            onClick={() => setCurrentModule('analytics')}
-            className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all cursor-pointer ${
-              currentModule === 'analytics'
-                ? 'bg-brand-lavender text-brand-purple shadow'
-                : 'text-purple-200 hover:text-white'
-            }`}
-          >
-            📊 Analytics & Insights Hub
-          </button>
-          <button
-            onClick={() => setCurrentModule('trends')}
-            className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all cursor-pointer ${
-              currentModule === 'trends'
-                ? 'bg-brand-lavender text-brand-purple shadow'
-                : 'text-purple-200 hover:text-white'
-            }`}
-          >
-            🔥 Trend Intelligence Explorer
-          </button>
-        </div>
+                {/* Auth Routes */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="/verify-account" element={<VerifyAccount />} />
 
-        {/* User Profile Badge */}
-        <div className="flex items-center gap-3">
-          <div className="text-right hidden sm:block">
-            <div className="text-xs font-bold text-white">Alex Rivera</div>
-            <div className="text-[10px] text-brand-lavender font-medium">Tech & AI Creator</div>
-          </div>
-          <div className="w-8 h-8 rounded-full bg-brand-coral text-white font-bold flex items-center justify-center text-xs border-2 border-white shadow-sm">
-            AR
-          </div>
-        </div>
-      </header>
+                {/* Protected Creator Profile Routes */}
+                <Route path="/creator/profile" element={<ProtectedRoute><CreatorProfile /></ProtectedRoute>} />
+                <Route path="/creator/edit" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
+                <Route path="/creator/portfolio" element={<ProtectedRoute><Portfolio /></ProtectedRoute>} />
+                <Route path="/creator/preferences" element={<ProtectedRoute><Preferences /></ProtectedRoute>} />
 
-      {/* Main Content Workspace */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
-        {currentModule === 'analytics' && <Analytics />}
-        {currentModule === 'trends' && <TrendExplorer />}
-      </main>
+                {/* Protected Dashboard Routes */}
+                <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+                <Route path="/dashboard/activity" element={<ProtectedRoute><Activity /></ProtectedRoute>} />
+                <Route path="/dashboard/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
 
-      {/* Global CreatorOS Footer */}
-      <footer className="bg-white border-t border-brand-border py-4 px-6 text-center text-xs text-gray-500">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <span>© 2026 CreatorOS. All Rights Reserved. File-Based Repository Architecture.</span>
-          <span className="text-brand-slate font-medium">Contributor 4 — Analytics, Insights & Trends</span>
-        </div>
-      </footer>
-    </div>
+                {/* Contributor 4 Analytics & Trends Routes */}
+                <Route path="/analytics/*" element={<Analytics />} />
+                <Route path="/trends/*" element={<TrendExplorer />} />
+
+                {/* Protected Settings Routes */}
+                <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+
+                {/* Fallback */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+              <ToastContainer />
+            </div>
+          </CreatorProvider>
+        </NotificationProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 
