@@ -1,0 +1,62 @@
+[
+  {
+    "topic_id": "tr_001",
+    "topic_name": "Autonomous AI Workflow Agents",
+    "category": "Artificial Intelligence",
+    "platform": "YouTube & LinkedIn",
+    "search_volume_index": 94,
+    "growth_rate_percent": 142.5,
+    "competition_level": "Medium",
+    "opportunity_score": 88,
+    "recommended_format": "Long-form Deep Dive + Code Walkthrough",
+    "status": "Viral Growth"
+  },
+  {
+    "topic_id": "tr_002",
+    "topic_name": "Minimalist Workspace & Tech Desk Setups 2026",
+    "category": "Lifestyle & Productivity",
+    "platform": "Instagram & YouTube Shorts",
+    "search_volume_index": 82,
+    "growth_rate_percent": 68.4,
+    "competition_level": "High",
+    "opportunity_score": 72,
+    "recommended_format": "Short Vertical Video B-roll",
+    "status": "Steady High"
+  },
+  {
+    "topic_id": "tr_003",
+    "topic_name": "Zero-Database File Repositories in Modern Apps",
+    "category": "Software Architecture",
+    "platform": "Blog & Newsletter",
+    "search_volume_index": 76,
+    "growth_rate_percent": 115.0,
+    "competition_level": "Low",
+    "opportunity_score": 95,
+    "recommended_format": "Technical Article & Benchmark Report",
+    "status": "Breakout Topic"
+  },
+  {
+    "topic_id": "tr_004",
+    "topic_name": "Creator Economy Financial Planning & Tax Hacks",
+    "category": "Finance & Business",
+    "platform": "YouTube & Podcasts",
+    "search_volume_index": 68,
+    "growth_rate_percent": 54.2,
+    "competition_level": "Low",
+    "opportunity_score": 84,
+    "recommended_format": "Step-by-step Guide",
+    "status": "Emerging"
+  },
+  {
+    "topic_id": "tr_005",
+    "topic_name": "AI Prompt Engineering vs Direct Fine-Tuning",
+    "category": "Artificial Intelligence",
+    "platform": "LinkedIn & Twitter",
+    "search_volume_index": 91,
+    "growth_rate_percent": 88.0,
+    "competition_level": "High",
+    "opportunity_score": 79,
+    "recommended_format": "Carousel Post",
+    "status": "Trending"
+  }
+]
