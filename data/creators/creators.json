@@ -35,5 +35,78 @@
       "active_campaigns": 0
     },
     "created_at": "2026-10-06T07:48:33.272111"
+  },
+  {
+    "id": "a558f960-026a-46e9-8e67-5a9efc5873ae",
+    "user_id": "923cfb12-597d-4da3-b61f-e5a25cdcf111",
+    "display_name": "radhika",
+    "bio": "Welcome to CreatorOS! Update your bio here.",
+    "niche": "General Content Creator",
+    "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    "banner_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+    "social_links": {
+      "youtube": "",
+      "instagram": "",
+      "twitter": "",
+      "linkedin": "",
+      "tiktok": "",
+      "website": ""
+    },
+    "portfolio_items": [],
+    "preferences": {
+      "content_focus": [
+        "Video",
+        "Writing"
+      ],
+      "target_audience": "Tech & Creative Enthusiasts",
+      "monetization_goals": [
+        "Brand Deals",
+        "Digital Products"
+      ],
+      "currency": "USD"
+    },
+    "stats": {
+      "total_followers": 0,
+      "monthly_reach": 0,
+      "engagement_rate": "0.0%",
+      "active_campaigns": 0
+    },
+    "created_at": "2026-10-06T07:50:25.936861"
+  },
+  {
+    "id": "727bb6df-06c0-4497-ac3b-5d242a8bd7f3",
+    "user_id": "5201a0e2-9d73-4f70-94c9-274920364d14",
+    "display_name": "radhika ",
+    "bio": "Welcome to CreatorOS! Update your bio here.",
+    "niche": "General Content Creator",
+    "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    "banner_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+    "social_links": {
+      "youtube": "",
+      "instagram": "",
+      "twitter": "",
+      "linkedin": "",
+      "tiktok": "",
+      "website": ""
+    },
+    "portfolio_items": [],
+    "preferences": {
+      "content_focus": [
+        "Podcasts",
+        "Live Streaming"
+      ],
+      "target_audience": "Tech & Creative Enthusiasts",
+      "monetization_goals": [
+        "Digital Products"
+      ],
+      "currency": "USD"
+    },
+    "stats": {
+      "total_followers": 0,
+      "monthly_reach": 0,
+      "engagement_rate": "0.0%",
+      "active_campaigns": 0
+    },
+    "created_at": "2026-10-06T07:52:03.621143"
   }
 ]
