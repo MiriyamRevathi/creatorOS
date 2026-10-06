@@ -6,6 +6,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { NotificationProvider } from './context/NotificationContext';
 import { ToastContainer } from './components/common/Toast';
 import { ProtectedRoute } from './components/layout/ProtectedRoute';
+import { DashboardLayout } from './components/layout/DashboardLayout';
 
 // Landing Pages
 import { Home } from './pages/landing/Home';
@@ -74,9 +75,9 @@ export function App() {
                 <Route path="/dashboard/activity" element={<ProtectedRoute><Activity /></ProtectedRoute>} />
                 <Route path="/dashboard/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
 
-                {/* Contributor 4 Analytics & Trends Routes */}
-                <Route path="/analytics/*" element={<Analytics />} />
-                <Route path="/trends/*" element={<TrendExplorer />} />
+                {/* Contributor 4 Analytics & Trends Routes inside DashboardLayout */}
+                <Route path="/analytics/*" element={<DashboardLayout><Analytics /></DashboardLayout>} />
+                <Route path="/trends/*" element={<DashboardLayout><TrendExplorer /></DashboardLayout>} />
 
                 {/* Protected Settings Routes */}
                 <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
