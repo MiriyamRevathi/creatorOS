@@ -1,5 +1,9 @@
 from flask import Blueprint, jsonify, request
-from middleware.auth import token_required
+
+try:
+    from backend.middleware.auth import token_required
+except ImportError:
+    from middleware.auth import token_required
 
 settings_bp = Blueprint('settings', __name__, url_prefix='/api/settings')
 

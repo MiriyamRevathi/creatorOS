@@ -1,0 +1,39 @@
+[
+  {
+    "id": "22e16935-6019-4627-95fa-d93818c247d0",
+    "user_id": "b3227c9a-3b8a-4aef-ba54-f7c47536d9aa",
+    "display_name": "radhika",
+    "bio": "Welcome to CreatorOS! Update your bio here.",
+    "niche": "General Content Creator",
+    "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    "banner_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+    "social_links": {
+      "youtube": "",
+      "instagram": "",
+      "twitter": "",
+      "linkedin": "",
+      "tiktok": "",
+      "website": ""
+    },
+    "portfolio_items": [],
+    "preferences": {
+      "content_focus": [
+        "Video",
+        "Writing"
+      ],
+      "target_audience": "Tech & Creative Enthusiasts",
+      "monetization_goals": [
+        "Brand Deals",
+        "Digital Products"
+      ],
+      "currency": "USD"
+    },
+    "stats": {
+      "total_followers": 0,
+      "monthly_reach": 0,
+      "engagement_rate": "0.0%",
+      "active_campaigns": 0
+    },
+    "created_at": "2026-10-06T07:48:33.272111"
+  }
+]

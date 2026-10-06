@@ -1,8 +1,13 @@
 import sys
 import os
 
-# Add root directory to python path for module imports
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+# Add both project root and backend directory to python path for module imports
+backend_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.abspath(os.path.join(backend_dir, ".."))
+if backend_dir not in sys.path:
+    sys.path.insert(0, backend_dir)
+if root_dir not in sys.path:
+    sys.path.insert(0, root_dir)
 
 from flask import Flask, jsonify
 from flask_cors import CORS
@@ -10,7 +15,7 @@ from flask_cors import CORS
 from backend.routes.analytics_routes import analytics_bp
 from backend.routes.trend_routes import trend_bp
 
-# Contributor 1 routes (handle both module paths gracefully)
+# Contributor 1 routes
 try:
     from backend.routes.auth_routes import auth_bp
     from backend.routes.creator_routes import creator_bp
@@ -18,7 +23,7 @@ try:
     from backend.routes.notification_routes import notification_bp
     from backend.routes.settings_routes import settings_bp
     C1_ROUTES_AVAILABLE = True
-except ImportError:
+except Exception as e:
     try:
         from routes.auth_routes import auth_bp
         from routes.creator_routes import creator_bp
@@ -26,7 +31,7 @@ except ImportError:
         from routes.notification_routes import notification_bp
         from routes.settings_routes import settings_bp
         C1_ROUTES_AVAILABLE = True
-    except ImportError:
+    except Exception:
         C1_ROUTES_AVAILABLE = False
 
 def create_app():

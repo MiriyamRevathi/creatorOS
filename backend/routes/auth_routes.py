@@ -1,5 +1,9 @@
 from flask import Blueprint
-from controllers import auth_controller
+
+try:
+    from backend.controllers import auth_controller
+except ImportError:
+    from controllers import auth_controller
 
 auth_bp = Blueprint('auth', __name__, url_prefix='/api/auth')
 

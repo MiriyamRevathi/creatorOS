@@ -1,6 +1,11 @@
 from flask import Blueprint
-from controllers import user_controller
-from middleware.auth import token_required
+
+try:
+    from backend.controllers import user_controller
+    from backend.middleware.auth import token_required
+except ImportError:
+    from controllers import user_controller
+    from middleware.auth import token_required
 
 user_bp = Blueprint('users', __name__, url_prefix='/api/users')
 

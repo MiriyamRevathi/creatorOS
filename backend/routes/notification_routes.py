@@ -1,6 +1,11 @@
 from flask import Blueprint
-from controllers import notification_controller
-from middleware.auth import token_required
+
+try:
+    from backend.controllers import notification_controller
+    from backend.middleware.auth import token_required
+except ImportError:
+    from controllers import notification_controller
+    from middleware.auth import token_required
 
 notification_bp = Blueprint('notifications', __name__, url_prefix='/api/notifications')
 
