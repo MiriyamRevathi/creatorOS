@@ -69,3 +69,5 @@ export default function TrendExplorer() {
     </div>
   );
 }
+
+// Trend Explorer Version 1.0.0
