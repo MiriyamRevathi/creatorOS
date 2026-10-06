@@ -78,3 +78,5 @@ export default function Analytics() {
     </div>
   );
 }
+
+// Analytics Dashboard Version 1.0.0
