@@ -8,7 +8,7 @@ import { ToastContainer } from './components/common/Toast';
 import { ProtectedRoute } from './components/layout/ProtectedRoute';
 import { DashboardLayout } from './components/layout/DashboardLayout';
 
-// Landing Pages
+// Landing Pages (Contributor 1)
 import { Home } from './pages/landing/Home';
 import { Features } from './pages/landing/Features';
 import { Pricing } from './pages/landing/Pricing';
@@ -16,26 +16,31 @@ import { About } from './pages/landing/About';
 import { Contact } from './pages/landing/Contact';
 import { FAQ } from './pages/landing/FAQ';
 
-// Auth Pages
+// Auth Pages (Contributor 1)
 import { Login } from './pages/auth/Login';
 import { Register } from './pages/auth/Register';
 import { ForgotPassword } from './pages/auth/ForgotPassword';
 import { ResetPassword } from './pages/auth/ResetPassword';
 import { VerifyAccount } from './pages/auth/VerifyAccount';
 
-// Creator Pages
+// Creator Pages (Contributor 1)
 import { CreatorProfile } from './pages/creator/CreatorProfile';
 import { EditProfile } from './pages/creator/EditProfile';
 import { Portfolio } from './pages/creator/Portfolio';
 import { Preferences } from './pages/creator/Preferences';
 
-// Dashboard Pages
+// Dashboard Pages (Contributor 1)
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { Activity } from './pages/dashboard/Activity';
 import { Notifications } from './pages/dashboard/Notifications';
 
-// Settings Pages
+// Settings Pages (Contributor 1)
 import { Settings } from './pages/settings/Settings';
+
+// Contributor 2 Pages (Ideas, Content Studio & Content Library)
+import { IdeasPage } from './pages/IdeasPage';
+import { ContentStudioPage } from './pages/ContentStudioPage';
+import { ContentLibraryPage } from './pages/ContentLibraryPage';
 
 // Contributor 4 — Analytics & Trends Pages
 import Analytics from './pages/analytics/Analytics';
@@ -75,9 +80,20 @@ export function App() {
                 <Route path="/dashboard/activity" element={<ProtectedRoute><Activity /></ProtectedRoute>} />
                 <Route path="/dashboard/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
 
-                {/* Contributor 4 Analytics & Trends Routes inside DashboardLayout */}
-                <Route path="/analytics/*" element={<DashboardLayout><Analytics /></DashboardLayout>} />
-                <Route path="/trends/*" element={<DashboardLayout><TrendExplorer /></DashboardLayout>} />
+                {/* Contributor 2 — Ideas, Content Studio & Content Library Routes */}
+                <Route path="/ideas" element={<ProtectedRoute><DashboardLayout><IdeasPage /></DashboardLayout></ProtectedRoute>} />
+                <Route path="/dashboard/ideas" element={<ProtectedRoute><DashboardLayout><IdeasPage /></DashboardLayout></ProtectedRoute>} />
+                
+                <Route path="/studio" element={<ProtectedRoute><DashboardLayout><ContentStudioPage /></DashboardLayout></ProtectedRoute>} />
+                <Route path="/content" element={<ProtectedRoute><DashboardLayout><ContentStudioPage /></DashboardLayout></ProtectedRoute>} />
+                <Route path="/dashboard/studio" element={<ProtectedRoute><DashboardLayout><ContentStudioPage /></DashboardLayout></ProtectedRoute>} />
+
+                <Route path="/library" element={<ProtectedRoute><DashboardLayout><ContentLibraryPage /></DashboardLayout></ProtectedRoute>} />
+                <Route path="/dashboard/library" element={<ProtectedRoute><DashboardLayout><ContentLibraryPage /></DashboardLayout></ProtectedRoute>} />
+
+                {/* Contributor 4 Analytics & Trends Routes */}
+                <Route path="/analytics/*" element={<Analytics />} />
+                <Route path="/trends/*" element={<TrendExplorer />} />
 
                 {/* Protected Settings Routes */}
                 <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
