@@ -25,7 +25,7 @@ export const Register = () => {
     setLoading(true);
     try {
       await register(email, password, fullName, username);
-      addToast('Account Created!', 'Welcome to CreatorOS! Let's set up your profile.', 'success');
+      addToast('Account Created!', "Welcome to CreatorOS! Let's set up your profile.", 'success');
       navigate('/creator/preferences');
     } catch (err) {
       setError(err.message || 'Registration failed.');
