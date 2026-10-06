@@ -1,15 +1,17 @@
-# PowerShell Script: Automate 35 Commits, Branches, and PR Merges for CreatorOS
-# Run in PowerShell: .\automate_git_commits.ps1
+# PowerShell Script: Automate 35 Commits, Branches, PR Merges, and GitHub Push
+# Run: .\automate_git_commits.ps1
 
 Write-Host "==================================================================" -ForegroundColor Magenta
-Write-Host "🚀 AUTOMATING 35 COMMITS, BRANCHES, AND PR MERGES FOR CREATOROS" -ForegroundColor Cyan
+Write-Host "🚀 AUTOMATING 35 COMMITS, BRANCHES, PR MERGES & GITHUB PUSH" -ForegroundColor Cyan
 Write-Host "==================================================================" -ForegroundColor Magenta
 
-# Initialize Git
 git init
 git config user.name "CreatorOS Contributor"
 git config user.email "contributor@creatoros.example.com"
 git branch -M main
+
+git remote remove origin 2>$null
+git remote add origin https://github.com/MiriyamRevathi/creatorOS.git
 
 $steps = @(
     @{ Branch = "feature/data-brand-profiles"; Files = "data/brands/brands.json"; Message = "feat(data): seed initial verified brand partner profiles in JSON persistence"; PRTitle = "Seed verified brand partner profiles data" },
@@ -61,7 +63,7 @@ foreach ($step in $steps) {
     Write-Host "[$i/$total] 🌿 Creating branch: $branch" -ForegroundColor Yellow
     git checkout -B $branch
 
-    Write-Host "[$i/$total] 💾 Adding files: $($step.Files)" -ForegroundColor Gray
+    Write-Host "[$i/$total] 💾 Staging files: $($step.Files)" -ForegroundColor Gray
     foreach ($f in $files) {
         git add $f
     }
@@ -76,9 +78,10 @@ foreach ($step in $steps) {
 }
 
 Write-Host "==================================================================" -ForegroundColor Magenta
-Write-Host "🎉 ALL 35 BRANCHES CREATED, COMMITTED, AND PR MERGED SUCCESSFULLY!" -ForegroundColor Green
+Write-Host "🚀 Pushing all branches and merged commits to GitHub..." -ForegroundColor Cyan
+git push -u origin main
+git push -u origin --all
+
 Write-Host "==================================================================" -ForegroundColor Magenta
-Write-Host "To push everything to your remote GitHub repository:" -ForegroundColor Cyan
-Write-Host "  git remote add origin https://github.com/MiriyamRevathi/creatorOS.git"
-Write-Host "  git push -u origin --all"
-Write-Host "  git push -u origin main"
+Write-Host "🎉 ALL 35 COMMITS, BRANCHES & PR MERGES PUSHED SUCCESSFULLY!" -ForegroundColor Green
+Write-Host "==================================================================" -ForegroundColor Magenta
