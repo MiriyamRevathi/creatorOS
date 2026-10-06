@@ -1,0 +1,10 @@
+[
+  { "date": "2026-09-01", "views": 42000, "likes": 3400, "comments": 420, "shares": 210, "engagement_rate": 9.6 },
+  { "date": "2026-09-05", "views": 48500, "likes": 4100, "comments": 510, "shares": 280, "engagement_rate": 10.1 },
+  { "date": "2026-09-10", "views": 53000, "likes": 4650, "comments": 580, "shares": 310, "engagement_rate": 10.4 },
+  { "date": "2026-09-15", "views": 61200, "likes": 5800, "comments": 720, "shares": 450, "engagement_rate": 11.3 },
+  { "date": "2026-09-20", "views": 78000, "likes": 7400, "comments": 890, "shares": 610, "engagement_rate": 11.4 },
+  { "date": "2026-09-25", "views": 84500, "likes": 8100, "comments": 990, "shares": 720, "engagement_rate": 11.6 },
+  { "date": "2026-09-30", "views": 92000, "likes": 9200, "comments": 1140, "shares": 850, "engagement_rate": 12.1 },
+  { "date": "2026-10-05", "views": 105000, "likes": 10900, "comments": 1350, "shares": 980, "engagement_rate": 12.6 }
+]

@@ -14,6 +14,8 @@ export default {
           lavender: '#D174D2',
           coral: '#E0563F',
           bg: '#FFFFFF',
+          muted: '#F8F6FA',
+          border: '#E7E2ED',
           darkBg: '#120D1A',
           darkCard: '#1D1629',
         },
@@ -37,7 +39,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
     },
   },

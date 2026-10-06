@@ -1,10 +1,13 @@
 # Dependencies
 node_modules/
+frontend/node_modules/
 .pnp
 .pnp.js
 
 # Build outputs
 dist/
+frontend/dist/
+frontend/.vite/
 build/
 .cache/
 
@@ -18,9 +21,7 @@ env/
 venv/
 ENV/
 .venv/
-build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/

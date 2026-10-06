@@ -1,0 +1,10 @@
+[
+  { "week": "W32 (Aug 2026)", "ai_interest": 65, "design_interest": 70, "finance_interest": 45, "dev_interest": 60 },
+  { "week": "W33 (Aug 2026)", "ai_interest": 70, "design_interest": 72, "finance_interest": 48, "dev_interest": 62 },
+  { "week": "W34 (Aug 2026)", "ai_interest": 78, "design_interest": 71, "finance_interest": 50, "dev_interest": 68 },
+  { "week": "W35 (Sep 2026)", "ai_interest": 84, "design_interest": 75, "finance_interest": 55, "dev_interest": 72 },
+  { "week": "W36 (Sep 2026)", "ai_interest": 90, "design_interest": 76, "finance_interest": 60, "dev_interest": 79 },
+  { "week": "W37 (Sep 2026)", "ai_interest": 94, "design_interest": 78, "finance_interest": 64, "dev_interest": 84 },
+  { "week": "W38 (Sep 2026)", "ai_interest": 98, "design_interest": 80, "finance_interest": 68, "dev_interest": 89 },
+  { "week": "W39 (Oct 2026)", "ai_interest": 100, "design_interest": 82, "finance_interest": 72, "dev_interest": 93 }
+]

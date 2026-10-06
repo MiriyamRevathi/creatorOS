@@ -42,6 +42,10 @@ import { IdeasPage } from './pages/IdeasPage';
 import { ContentStudioPage } from './pages/ContentStudioPage';
 import { ContentLibraryPage } from './pages/ContentLibraryPage';
 
+// Contributor 4 — Analytics & Trends Pages
+import Analytics from './pages/analytics/Analytics';
+import TrendExplorer from './pages/trends/TrendExplorer';
+
 export function App() {
   return (
     <ThemeProvider>
@@ -86,6 +90,10 @@ export function App() {
 
                 <Route path="/library" element={<ProtectedRoute><DashboardLayout><ContentLibraryPage /></DashboardLayout></ProtectedRoute>} />
                 <Route path="/dashboard/library" element={<ProtectedRoute><DashboardLayout><ContentLibraryPage /></DashboardLayout></ProtectedRoute>} />
+
+                {/* Contributor 4 Analytics & Trends Routes */}
+                <Route path="/analytics/*" element={<Analytics />} />
+                <Route path="/trends/*" element={<TrendExplorer />} />
 
                 {/* Protected Settings Routes */}
                 <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />

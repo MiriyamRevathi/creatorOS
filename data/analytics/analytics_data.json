@@ -1,0 +1,14 @@
+{
+  "creator_id": "creator_001",
+  "last_updated": "2026-10-06T11:00:00Z",
+  "overview_kpis": {
+    "total_followers": 485000,
+    "followers_growth_net_30d": 24500,
+    "total_views_30d": 1850000,
+    "views_growth_percent": 18.4,
+    "avg_engagement_rate": 11.8,
+    "total_revenue_30d": 13250.00,
+    "revenue_growth_percent": 26.2,
+    "total_watch_time_hours": 34200
+  }
+}
