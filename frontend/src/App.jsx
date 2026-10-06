@@ -1,221 +1,97 @@
-import React, { useState } from 'react';
-import { useMarketplace } from './hooks/useMarketplace';
-import Navbar from './components/marketplace/Navbar';
-import BrandMarketplace from './pages/brands/BrandMarketplace';
-import BrandProfile from './pages/brands/BrandProfile';
-import Campaigns from './pages/brands/Campaigns';
-import CampaignDetails from './pages/brands/CampaignDetails';
-import Applications from './pages/brands/Applications';
-import Contracts from './pages/brands/Contracts';
-import Deliverables from './pages/brands/Deliverables';
-import BrandDirectory from './pages/brands/BrandDirectory';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { CreatorProvider } from './context/CreatorContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { NotificationProvider } from './context/NotificationContext';
+import { ToastContainer } from './components/common/Toast';
+import { ProtectedRoute } from './components/layout/ProtectedRoute';
+import { DashboardLayout } from './components/layout/DashboardLayout';
 
-export default function App() {
-  const [activePage, setActivePage] = useState('marketplace');
-  const [selectedCampaign, setSelectedCampaign] = useState(null);
-  const [selectedBrand, setSelectedBrand] = useState(null);
+// Landing Pages
+import { Home } from './pages/landing/Home';
+import { Features } from './pages/landing/Features';
+import { Pricing } from './pages/landing/Pricing';
+import { About } from './pages/landing/About';
+import { Contact } from './pages/landing/Contact';
+import { FAQ } from './pages/landing/FAQ';
 
-  const {
-    brands,
-    campaigns,
-    applications,
-    contracts,
-    deliverables,
-    loading,
-    error,
-    userRole,
-    setUserRole,
-    selectedCategory,
-    setSelectedCategory,
-    selectedPlatform,
-    setSelectedPlatform,
-    searchQuery,
-    setSearchQuery,
-    toast,
-    handleCreateCampaign,
-    handleSubmitApplication,
-    handleReviewApplication,
-    handleSignContract,
-    handleSubmitDraft,
-    handleReviewDeliverable
-  } = useMarketplace();
+// Auth Pages
+import { Login } from './pages/auth/Login';
+import { Register } from './pages/auth/Register';
+import { ForgotPassword } from './pages/auth/ForgotPassword';
+import { ResetPassword } from './pages/auth/ResetPassword';
+import { VerifyAccount } from './pages/auth/VerifyAccount';
 
-  // Navigation handlers
-  const handleSelectCampaign = (camp) => {
-    setSelectedCampaign(camp);
-    setActivePage('campaign-details');
-  };
+// Creator Pages
+import { CreatorProfile } from './pages/creator/CreatorProfile';
+import { EditProfile } from './pages/creator/EditProfile';
+import { Portfolio } from './pages/creator/Portfolio';
+import { Preferences } from './pages/creator/Preferences';
 
-  const handleSelectBrand = (b) => {
-    const fullBrand = brands.find(item => item.id === b.id) || b;
-    setSelectedBrand(fullBrand);
-    setActivePage('brand-profile');
-  };
+// Dashboard Pages
+import { Dashboard } from './pages/dashboard/Dashboard';
+import { Activity } from './pages/dashboard/Activity';
+import { Notifications } from './pages/dashboard/Notifications';
 
+// Settings Pages
+import { Settings } from './pages/settings/Settings';
+
+// Contributor 4 — Analytics & Trends Pages
+import Analytics from './pages/analytics/Analytics';
+import TrendExplorer from './pages/trends/TrendExplorer';
+
+export function App() {
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* Toast Notification */}
-      {toast && (
-        <div style={{
-          position: 'fixed',
-          bottom: '24px',
-          right: '24px',
-          zIndex: 2000,
-          backgroundColor: toast.type === 'error' ? '#EF4444' : '#412653',
-          color: '#FFFFFF',
-          padding: '0.85rem 1.4rem',
-          borderRadius: '12px',
-          boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.75rem',
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          animation: 'fadeIn 0.25s ease-out'
-        }}>
-          <span>{toast.type === 'error' ? '⚠️' : '✓'}</span>
-          <span>{toast.message}</span>
-        </div>
-      )}
+    <ThemeProvider>
+      <AuthProvider>
+        <NotificationProvider>
+          <CreatorProvider>
+            <div className="min-h-screen bg-white dark:bg-brand-darkBg font-sans text-slate-800 dark:text-slate-100">
+              <Routes>
+                {/* Landing Routes */}
+                <Route path="/" element={<Home />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/faq" element={<FAQ />} />
 
-      {/* Navigation Header */}
-      <Navbar
-        activePage={activePage}
-        setActivePage={(page) => {
-          setActivePage(page);
-          if (page === 'campaigns') setSelectedCampaign(null);
-          if (page === 'brands') setSelectedBrand(null);
-        }}
-        userRole={userRole}
-        setUserRole={setUserRole}
-        onOpenNewCampaign={() => {
-          setActivePage('campaigns');
-        }}
-      />
+                {/* Auth Routes */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="/verify-account" element={<VerifyAccount />} />
 
-      {/* Main Content Area */}
-      <div style={{ flex: 1, maxWidth: '1280px', width: '100%', margin: '0 auto', padding: '1.75rem 1.5rem' }}>
-        {loading && (
-          <div style={{ padding: '2rem', textAlign: 'center', color: '#6B7280' }}>
-            <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>⏳</div>
-            Loading CreatorOS Marketplace...
-          </div>
-        )}
+                {/* Protected Creator Profile Routes */}
+                <Route path="/creator/profile" element={<ProtectedRoute><CreatorProfile /></ProtectedRoute>} />
+                <Route path="/creator/edit" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
+                <Route path="/creator/portfolio" element={<ProtectedRoute><Portfolio /></ProtectedRoute>} />
+                <Route path="/creator/preferences" element={<ProtectedRoute><Preferences /></ProtectedRoute>} />
 
-        {!loading && (
-          <>
-            {activePage === 'marketplace' && (
-              <BrandMarketplace
-                campaigns={campaigns}
-                brands={brands}
-                selectedCategory={selectedCategory}
-                setSelectedCategory={setSelectedCategory}
-                selectedPlatform={selectedPlatform}
-                setSelectedPlatform={setSelectedPlatform}
-                searchQuery={searchQuery}
-                setSearchQuery={setSearchQuery}
-                onSelectCampaign={handleSelectCampaign}
-                onSelectBrand={handleSelectBrand}
-                onSubmitApplication={handleSubmitApplication}
-              />
-            )}
+                {/* Protected Dashboard Routes */}
+                <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+                <Route path="/dashboard/activity" element={<ProtectedRoute><Activity /></ProtectedRoute>} />
+                <Route path="/dashboard/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
 
-            {activePage === 'campaign-details' && (
-              <CampaignDetails
-                campaign={selectedCampaign}
-                brand={brands.find(b => b.id === selectedCampaign?.brandId)}
-                userRole={userRole}
-                onBack={() => setActivePage('marketplace')}
-                onApply={handleSubmitApplication}
-                onViewBrand={handleSelectBrand}
-              />
-            )}
+                {/* Contributor 4 Analytics & Trends Routes inside DashboardLayout */}
+                <Route path="/analytics/*" element={<DashboardLayout><Analytics /></DashboardLayout>} />
+                <Route path="/trends/*" element={<DashboardLayout><TrendExplorer /></DashboardLayout>} />
 
-            {activePage === 'brand-profile' && (
-              <BrandProfile
-                brand={selectedBrand}
-                campaigns={campaigns}
-                onSelectCampaign={handleSelectCampaign}
-                onBack={() => setActivePage('marketplace')}
-              />
-            )}
+                {/* Protected Settings Routes */}
+                <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
 
-            {activePage === 'campaigns' && (
-              <Campaigns
-                campaigns={campaigns}
-                brands={brands}
-                userRole={userRole}
-                onSelectCampaign={handleSelectCampaign}
-                onCreateCampaign={handleCreateCampaign}
-              />
-            )}
-
-            {activePage === 'applications' && (
-              <Applications
-                applications={applications}
-                userRole={userRole}
-                onReviewApplication={handleReviewApplication}
-              />
-            )}
-
-            {activePage === 'contracts' && (
-              <Contracts
-                contracts={contracts}
-                userRole={userRole}
-                onSignContract={handleSignContract}
-              />
-            )}
-
-            {activePage === 'deliverables' && (
-              <Deliverables
-                deliverables={deliverables}
-                userRole={userRole}
-                onSubmitDraft={handleSubmitDraft}
-                onReviewDeliverable={handleReviewDeliverable}
-              />
-            )}
-
-            {activePage === 'brands' && (
-              <BrandDirectory
-                brands={brands}
-                onSelectBrand={handleSelectBrand}
-              />
-            )}
-          </>
-        )}
-      </div>
-
-      {/* Footer */}
-      <footer style={{
-        backgroundColor: '#FFFFFF',
-        borderTop: '1px solid #E5E7EB',
-        padding: '2rem 1.5rem',
-        marginTop: '3rem'
-      }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1rem',
-          fontSize: '0.85rem',
-          color: '#6B7280'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span style={{ fontWeight: 800, color: '#412653' }}>CreatorOS</span>
-            <span>• Unified Operating System for Content Creators</span>
-          </div>
-
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <span>Zero Database / File-based JSON Engine</span>
-            <span>Locked Brand Palette</span>
-            <span>Escrow Guaranteed</span>
-          </div>
-        </div>
-      </footer>
-    </div>
+                {/* Fallback */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+              <ToastContainer />
+            </div>
+          </CreatorProvider>
+        </NotificationProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
+
+export default App;
